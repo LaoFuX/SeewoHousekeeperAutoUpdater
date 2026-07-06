@@ -1,0 +1,107 @@
+﻿Probe report: D:\aiworkspace\script\AHKSCRIPT\logs\probe\probe_report_20260706_113946.txt
+Timestamp: 2026-07-06 11:39:46
+Computer: CYKA
+User: HP
+Admin: False
+
+==== PowerShell ====
+PSVersion: 5.1.26100.8457
+Host: ConsoleHost
+        Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process          Bypass
+  CurrentUser       Undefined
+ LocalMachine       Undefined
+
+==== Operating System ====
+(none)
+
+==== Screens and DPI ====
+Screen: Device=\\.\DISPLAY1 Primary=True Bounds={X=0,Y=0,Width=1707,Height=960} WorkingArea={X=0,Y=0,Width=1707,Height=912}
+DPI: X=96 Y=96
+
+==== AutoHotkey ====
+AutoHotkey in PATH: not found
+(none)
+
+==== Matching Services ====
+(none)
+
+==== Matching Processes ====
+(none)
+
+==== Matching Uninstall Registry Entries ====
+DisplayName     : 深岩银河
+DisplayVersion  : 
+Publisher       : Ghost Ship Games
+InstallLocation : D:\Steam\steamapps\common\Deep Rock Galactic
+DisplayIcon     : D:\Steam\steam\games\68a027efd8c7a79be74b4efd7b328b7e103e4708.ico
+UninstallString : "D:\Steam\steam.exe" steam://uninstall/548430
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Steam App 548430
+DisplayName     : EasiUpdate3
+DisplayVersion  : 3.5.0.911
+Publisher       : seewo
+InstallLocation : 
+DisplayIcon     : C:\ProgramData\Seewo\Easiupdate3\Easiupdate3\EasiUpdate3.exe
+UninstallString : C:\ProgramData\Seewo\Easiupdate3\Uninstall.exe
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{A89E781E-89E0-432D-A06C-92E3F80E09BE}
+
+==== Matching Shortcut Targets ====
+Shortcut         : C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\dfrgui.lnk
+Target           : C:\WINDOWS\system32\dfrgui.exe
+Arguments        : 
+WorkingDirectory : %systemroot%\system32
+Shortcut         : C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Oracle VM VirtualBox\用户手册 (PDF, English).lnk
+Target           : C:\Program Files\Oracle\VirtualBox\doc\UserManual.pdf
+Arguments        : 
+WorkingDirectory : 
+
+==== Candidate Executable Files ====
+Path          : C:\ProgramData\seewo\CoverShutdownExe\CoverShutdown.exe
+SizeMB        : 1.38
+LastWriteTime : 2024/9/12 15:55:12
+Path          : C:\ProgramData\seewo\CoverShutdownExe\crashpad_handler.exe
+SizeMB        : 0.85
+LastWriteTime : 2024/9/12 15:54:42
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3\CrashRpt.exe
+SizeMB        : 0.48
+LastWriteTime : 2025/10/30 11:15:54
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3\EasiUpdate3.exe
+SizeMB        : 3.5
+LastWriteTime : 2025/10/30 11:15:58
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3\EasiUpdate3Protect.exe
+SizeMB        : 0.78
+LastWriteTime : 2025/10/30 11:16:06
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3\Eu3After.exe
+SizeMB        : 0.44
+LastWriteTime : 2025/10/30 11:16:32
+Path          : C:\ProgramData\seewo\Easiupdate3\Uninstall.exe
+SizeMB        : 0.05
+LastWriteTime : 2026/7/2 19:48:31
+Path          : C:\ProgramData\seewo\InjectExe\Injector.exe
+SizeMB        : 0.1
+LastWriteTime : 2024/9/12 15:54:40
+Path          : C:\ProgramData\seewo\InjectExe\x64\Injector.exe
+SizeMB        : 0.12
+LastWriteTime : 2024/9/12 15:54:48
+Path          : C:\ProgramData\seewo\InjectExe\x64\tracepdb.exe
+SizeMB        : 0.06
+LastWriteTime : 2024/9/12 15:23:04
+
+==== Visible Top-Level Windows ====
+(none)
+
+==== Candidate Window UI Automation Trees ====
+No candidate windows were found.
+Tip: open the target app window and run probe.bat again.
+
+==== Manual Info Needed If Missing ====
+1. Exact target program path for lock/unlock.
+2. Exact window title shown during lock/unlock.
+3. Password policy: current password, can it be stored in config, and who can read it.
+4. Screenshots of each step if UI Automation tree is empty or incomplete.
+5. Expected success signal after lock/unlock, such as text, tray icon state, or dialog.
+
+DONE: D:\aiworkspace\script\AHKSCRIPT\logs\probe\probe_report_20260706_113946.txt

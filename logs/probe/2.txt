@@ -1,0 +1,979 @@
+﻿Probe report: F:\新建文件夹\AHKSCRIPT\logs\probe\probe_report_20260706_131910.txt
+Timestamp: 2026-07-06 13:19:10
+Computer: DESKTOP-B0OVLAP
+User: seewo
+Admin: True
+
+==== PowerShell ====
+PSVersion: 5.1.18362.1171
+Host: ConsoleHost
+        Scope ExecutionPolicy
+        ----- ---------------
+MachinePolicy       Undefined
+   UserPolicy       Undefined
+      Process          Bypass
+  CurrentUser       Undefined
+ LocalMachine       Undefined
+
+==== Operating System ====
+Caption        : Microsoft Windows 10 专业版
+Version        : 10.0.18363
+BuildNumber    : 18363
+OSArchitecture : 64 位
+InstallDate    : 2021/5/20 10:50:49
+LastBootUpTime : 2026/7/6 13:12:52
+
+==== Screens and DPI ====
+Screen: Device=\\.\DISPLAY1 Primary=True Bounds={X=0,Y=0,Width=1280,Height=720} WorkingArea={X=0,Y=0,Width=1280,Height=680}
+DPI: X=96 Y=96
+
+==== AutoHotkey ====
+AutoHotkey in PATH: not found
+(none)
+
+==== Matching Services ====
+Name        : EasiUpdate
+DisplayName : EasiUpdate
+State       : Running
+StartMode   : Auto
+PathName    : "C:\ProgramData\seewo\Easiupdate\easiupdate\EasiUpdate.exe"
+Name        : EasiUpdate3
+DisplayName : EasiUpdate3
+State       : Running
+StartMode   : Auto
+PathName    : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\EasiUpdate3.exe /winService
+Name        : EasiUpdate3Protect
+DisplayName : EasiUpdate3Protect
+State       : Running
+StartMode   : Auto
+PathName    : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\EasiUpdate3Protect.exe /winService
+Name        : SeewoCoreService
+DisplayName : SeewoCoreService
+State       : Running
+StartMode   : Auto
+PathName    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\SeewoCore.exe" /winService
+Name        : SeewoFreezeUpdateAssist
+DisplayName : SeewoFreezeUpdateAssist
+State       : Running
+StartMode   : Auto
+PathName    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\SeewoFreezeUpdateAssist.exe" /winService
+Name        : seewoPincoTeacherAdminMonitorService
+DisplayName : seewoPincoTeacherAdminMonitorService
+State       : Running
+StartMode   : Auto
+PathName    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\seewoPincoTeacherAdminMonitorService.exe" /winService
+Name        : SeewoProxyLayerService
+DisplayName : SeewoProxyLayerService
+State       : Stopped
+StartMode   : Manual
+PathName    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\ProxyLayerService\proxyLayerService.exe" /winService
+
+==== Matching Processes ====
+ProcessId      : 4964
+Name           : EasiUpdate.exe
+ExecutablePath : C:\ProgramData\seewo\Easiupdate\easiupdate\EasiUpdate.exe
+CommandLine    : "C:\ProgramData\seewo\Easiupdate\easiupdate\EasiUpdate.exe"
+ProcessId      : 4992
+Name           : EasiUpdate3Protect.exe
+ExecutablePath : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\EasiUpdate3Protect.exe
+CommandLine    : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\EasiUpdate3Protect.exe /winService
+ProcessId      : 5116
+Name           : seewoPincoTeacherAdminMonitorService.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\seewoPincoTeacherAdminMonitorService.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\seewoPincoTeacherAdminMonitorService.exe" /winService
+ProcessId      : 5204
+Name           : EasiUpdate3.exe
+ExecutablePath : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\EasiUpdate3.exe
+CommandLine    : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\EasiUpdate3.exe /winService
+ProcessId      : 5244
+Name           : SeewoCore.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\SeewoCore.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\SeewoCore.exe" /winService
+ProcessId      : 5348
+Name           : SeewoFreezeUpdateAssist.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\SeewoFreezeUpdateAssist.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\SeewoFreezeUpdateAssist.exe" /winService
+ProcessId      : 6840
+Name           : crashpad_handler.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\crashpad_handler.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\crashpad_handler.exe" --no-rate-limit --database=C:\ProgramData\seewo\Freeze\SeewoFreezeUpdateAssist\.sentry --metrics-dir=C:\ProgramData\seewo\
+                 Freeze\SeewoFreezeUpdateAssist\.sentry --url=https://sentry.cvtapi.com:443/api/411/minidump/?sentry_client=sentry.native/0.6.5&sentry_key=7d120037efd4444ebaa166480f58ca86 --attachment=8:\log_backup\seewo\SeewoFreezeUpdateAs
+                 sist/SeewoFreezeUpdateAssist.log --attachment=C:\ProgramData\seewo\Freeze\SeewoFreezeUpdateAssist\.sentry\6c3cc057-305b-4d05-1cdd-3373471ee767.run\__sentry-event --attachment=C:\ProgramData\seewo\Freeze\SeewoFreezeUpdateAss
+                 ist\.sentry\6c3cc057-305b-4d05-1cdd-3373471ee767.run\__sentry-breadcrumb1 --attachment=C:\ProgramData\seewo\Freeze\SeewoFreezeUpdateAssist\.sentry\6c3cc057-305b-4d05-1cdd-3373471ee767.run\__sentry-breadcrumb2 --initial-clie
+                 nt-data=0x3ac,0x3b0,0x3b4,0x35c,0x3b8,0x6fc58160,0x6fc58174,0x6fc58184
+ProcessId      : 6880
+Name           : crashpad_handler.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\crashpad_handler.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\crashpad_handler.exe" --no-rate-limit --database=C:\ProgramData\seewo\seewoPincoTeacherAdminMonitorService\sentry-native --metrics-d
+                 ir=C:\ProgramData\seewo\seewoPincoTeacherAdminMonitorService\sentry-native --attachment=C:\ProgramData/seewo/seewoPincoTeacherAdminMonitorService/log/seewoPincoTeacherAdminMonitorService.log --attachment=C:\ProgramData\seew
+                 o\seewoPincoTeacherAdminMonitorService\sentry-native\896067e5-6643-4a7f-fb07-b16584c17a61.run\__sentry-event --attachment=C:\ProgramData\seewo\seewoPincoTeacherAdminMonitorService\sentry-native\896067e5-6643-4a7f-fb07-b1658
+                 4c17a61.run\__sentry-breadcrumb1 --attachment=C:\ProgramData\seewo\seewoPincoTeacherAdminMonitorService\sentry-native\896067e5-6643-4a7f-fb07-b16584c17a61.run\__sentry-breadcrumb2 --initial-client-data=0x2f8,0x334,0x340,0x3
+                 30,0x3c4,0x73912d80,0x73912d94,0x73912da4
+ProcessId      : 6524
+Name           : crashpad_handler.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\crashpad_handler.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\crashpad_handler.exe" --no-rate-limit --database=C:\ProgramData\seewo\SeewoCore\.sentry --metrics-dir=C:\ProgramData\seewo\SeewoCore\.sentry --url
+                 =https://sentry.cvtapi.com:443/api/353/minidump/?sentry_client=sentry.native/0.6.5&sentry_key=bbf029303e764b44be7f4d296eae21b8 --attachment=8:\log_backup\seewo\SeewoCore/SeewoCore.log --attachment=C:\ProgramData\seewo\Seewo
+                 Core\.sentry\46a7360c-28d5-40ee-7a27-107524c52219.run\__sentry-event --attachment=C:\ProgramData\seewo\SeewoCore\.sentry\46a7360c-28d5-40ee-7a27-107524c52219.run\__sentry-breadcrumb1 --attachment=C:\ProgramData\seewo\SeewoC
+                 ore\.sentry\46a7360c-28d5-40ee-7a27-107524c52219.run\__sentry-breadcrumb2 --initial-client-data=0x350,0x354,0x358,0x2c8,0x35c,0x6e1a8160,0x6e1a8174,0x6e1a8184
+ProcessId      : 8212
+Name           : seewoPincoTeacherAdminService.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\seewoPincoTeacherAdminService.exe
+CommandLine    : "C:/Program Files (x86)/Seewo/seewoPincoTeacher/seewoPincoTeacher_1.2.43.7298/pincoService/seewoPincoTeacherAdminService.exe"
+ProcessId      : 8728
+Name           : crashpad_handler.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\crashpad_handler.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\crashpad_handler.exe" --no-rate-limit --database=C:\ProgramData\seewo\seewoPincoTeacherAdminService\sentry-native --metrics-dir=C:\P
+                 rogramData\seewo\seewoPincoTeacherAdminService\sentry-native --attachment=C:\ProgramData/seewo/seewoPincoTeacherAdminService/log/seewoPincoTeacherAdminService.log --attachment=C:\ProgramData\seewo\seewoPincoTeacherAdminServ
+                 ice\sentry-native\7d5e7bba-82e0-4105-54d1-1c1788ae60a8.run\__sentry-event --attachment=C:\ProgramData\seewo\seewoPincoTeacherAdminService\sentry-native\7d5e7bba-82e0-4105-54d1-1c1788ae60a8.run\__sentry-breadcrumb1 --attachm
+                 ent=C:\ProgramData\seewo\seewoPincoTeacherAdminService\sentry-native\7d5e7bba-82e0-4105-54d1-1c1788ae60a8.run\__sentry-breadcrumb2 --initial-client-data=0x3dc,0x3e0,0x3e4,0x324,0x3e8,0x73912d80,0x73912d94,0x73912da4
+ProcessId      : 8516
+Name           : EasiAgent.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\EasiAgent\EasiAgent.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\EasiAgent\EasiAgent.exe"
+ProcessId      : 10068
+Name           : SeewoAbility.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoAbility\SeewoAbility.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoAbility\SeewoAbility.exe"
+ProcessId      : 9728
+Name           : SeewoServiceAssistant.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\SeewoServiceAssistant.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\SeewoServiceAssistant.exe" --desktop
+ProcessId      : 9776
+Name           : media_capture.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\toolbox\media_capture\media_capture.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\toolbox\media_capture\media_capture.exe"
+ProcessId      : 8832
+Name           : crashpad_handler.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoAbility\crashpad_handler.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoAbility\crashpad_handler.exe" --no-rate-limit --database=C:\Users\seewo\AppData\Roaming\seewo\SeewoAbility\.sentry --metrics-dir=C:\Users\seewo\AppData
+                 \Roaming\seewo\SeewoAbility\.sentry --url=https://sentry.cvtapi.com:443/api/410/minidump/?sentry_client=sentry.native/0.6.5&sentry_key=3d6690f454124d8fb63df4d5a3ff7254 --attachment=8:\log_backup\seewo\SeewoAbility/SeewoAbil
+                 ity.log --attachment=C:\Users\seewo\AppData\Roaming\seewo\SeewoAbility\.sentry\969ad28c-0b3d-4303-670c-5a6780bc893c.run\__sentry-event --attachment=C:\Users\seewo\AppData\Roaming\seewo\SeewoAbility\.sentry\969ad28c-0b3d-430
+                 3-670c-5a6780bc893c.run\__sentry-breadcrumb1 --attachment=C:\Users\seewo\AppData\Roaming\seewo\SeewoAbility\.sentry\969ad28c-0b3d-4303-670c-5a6780bc893c.run\__sentry-breadcrumb2 --initial-client-data=0x2e4,0x2e8,0x2ec,0x298
+                 ,0x2f0,0x633b8160,0x633b8174,0x633b8184
+ProcessId      : 8844
+Name           : crashpad_handler.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\toolbox\media_capture\crashpad_handler.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\toolbox\media_capture\crashpad_handler.exe" --no-rate-limit --database=C:\ProgramData\seewo\media_capture\.sentry --metrics-dir=C:\ProgramData\see
+                 wo\media_capture\.sentry --url=https://sentry.cvtapi.com:443/api/450/minidump/?sentry_client=sentry.native/0.6.5&sentry_key=d4ea9ec15fb84f75bdb54949da51bee5 --attachment=C:\ProgramData/seewo/media_capture/log/media_capture.
+                 log --attachment=C:\ProgramData\seewo\media_capture\.sentry\19c2d6ad-a5e6-45de-d58b-1033185550b3.run\__sentry-event --attachment=C:\ProgramData\seewo\media_capture\.sentry\19c2d6ad-a5e6-45de-d58b-1033185550b3.run\__sentry-b
+                 readcrumb1 --attachment=C:\ProgramData\seewo\media_capture\.sentry\19c2d6ad-a5e6-45de-d58b-1033185550b3.run\__sentry-breadcrumb2 --initial-client-data=0x45c,0x460,0x464,0x3f4,0x468,0x645e8160,0x645e8174,0x645e8184
+ProcessId      : 10524
+Name           : SeewoServiceAssistant.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\SeewoServiceAssistant.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\SeewoServiceAssistant.exe" --type=gpu-process --field-trial-handle=1788,2595105005257547203,3477708544676455875,131072 --enable-featur
+                 es=WebComponentsV0Enabled --disable-features=SpareRendererForSitePerProcess --gpu-preferences=MAAAAAAAAADgAAAwAAAAAAAAAAAAAAAAAABgAAAAAAAQAAAAAAAAAAAAAAAAAAAAKAAAAAQAAAAgAAAAAAAAACgAAAAAAAAAMAAAAAAAAAA4AAAAAAAAABAAAAAAAAAAA
+                 AAAAAUAAAAQAAAAAAAAAAAAAAAGAAAAEAAAAAAAAAABAAAABQAAABAAAAAAAAAAAQAAAAYAAAA= --use-gl=swiftshader-webgl --mojo-platform-channel-handle=1840 /prefetch:2
+ProcessId      : 10644
+Name           : SeewoServiceAssistant.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\SeewoServiceAssistant.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\SeewoServiceAssistant.exe" --type=utility --field-trial-handle=1788,2595105005257547203,3477708544676455875,131072 --enable-features=W
+                 ebComponentsV0Enabled --disable-features=SpareRendererForSitePerProcess --lang=zh-CN --service-sandbox-type=network --ignore-certificate-errors=true --ignore-certificate-errors=true --mojo-platform-channel-handle=2312 /pref
+                 etch:8
+ProcessId      : 13808
+Name           : msedge.exe
+ExecutablePath : C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe
+CommandLine    : "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --type=crashpad-handler "--user-data-dir=C:\Users\seewo\AppData\Local\Microsoft\Edge\User Data" /prefetch:4 --monitor-self-annotation=ptype=crashpad-handler "--
+                 database=C:\Users\seewo\AppData\Local\Microsoft\Edge\User Data\Crashpad" "--metrics-dir=C:\Users\seewo\AppData\Local\Microsoft\Edge\User Data" --annotation=IsOfficialBuild=1 --annotation=channel= --annotation=chromium-versi
+                 on=130.0.6723.59 "--annotation=exe=C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --annotation=plat=Win64 --annotation=prod=Edge --annotation=ver=130.0.2849.52 --initial-client-data=0x2c4,0x2c8,0x2cc,0xf8,0x2
+                 d4,0x7ffb8f954dc0,0x7ffb8f954dcc,0x7ffb8f954dd8
+ProcessId      : 15312
+Name           : EasiRecorder.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\EasiRecorder\EasiRecorder.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\EasiRecorder\EasiRecorder.exe" 
+ProcessId      : 11680
+Name           : seewoPincoTeacher.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\pincoMirror\..\..\seewoPincoTeacher.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\pincoMirror\..\..\seewoPincoTeacher.exe"
+ProcessId      : 12348
+Name           : seewoPincoTeacher.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\pincoMirror\..\..\seewoPincoTeacher.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\pincoMirror\..\..\seewoPincoTeacher.exe" --type=crashpad-handler --user-data-dir=C:\Users\seewo\AppData\Roaming\university-windows-t
+                 eacher /prefetch:7 --no-rate-limit --monitor-self-annotation=ptype=crashpad-handler --database=C:\Users\seewo\AppData\Roaming\university-windows-teacher\Crashpad --url=https://f.a.k/e --annotation=_productName=university-wi
+                 ndows-teacher --annotation=_version=14.2.9 --annotation=prod=Electron --annotation=ver=14.2.9 --initial-client-data=0x4d8,0x4d4,0x4bc,0x4cc,0x4e8,0x78b3410,0x78b3420,0x78b342c
+ProcessId      : 15444
+Name           : BoardService.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\enService\BoardService.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\enService\BoardService.exe" --pid 11680 --address localhost:51279
+ProcessId      : 15460
+Name           : seewoPincoTeacherService.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\seewoPincoTeacherService.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\seewoPincoTeacherService.exe" /force
+ProcessId      : 15528
+Name           : seewoPincoTeacher.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\seewoPincoTeacher.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\seewoPincoTeacher.exe" --type=gpu-process --field-trial-handle=2036,17645534516572207837,16424646840135326938,131072 --disable-features=Calculate
+                 NativeWinOcclusion,CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnlyOnDemand --disable-gpu-sandbox --enable-logging=file --user-data-dir="C:\Users\seewo\Ap
+                 pData\Roaming\university-windows-teacher" --gpu-preferences=UAAAAAAAAADgAAAQAAAAAAAAAAAAAAAAAABgAAAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgAAAAAAAAAeAAAAAAAAAAoAAAABAAAACAAAAAAAAAAKAAAAAAAAAAwAAAAAAAAADgAAAAAAAAAEAA
+                 AAAAAAAAAAAAADQAAABAAAAAAAAAAAQAAAA0AAAAQAAAAAAAAAAQAAAANAAAAEAAAAAAAAAAHAAAADQAAAAgAAAAAAAAACAAAAAAAAAA= --enable-logging=file --log-file="C:\Users\seewo\AppData\Roaming\Seewo\seewoPincoTeacher\logs\2026-07-06\electron.13-
+                 13-59-093.log" --mojo-platform-channel-handle=1996 /prefetch:2
+ProcessId      : 15600
+Name           : seewoPincoTeacher.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\seewoPincoTeacher.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\seewoPincoTeacher.exe" --type=utility --utility-sub-type=network.mojom.NetworkService --field-trial-handle=2036,17645534516572207837,164246468401
+                 35326938,131072 --disable-features=CalculateNativeWinOcclusion,CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnlyOnDemand --lang=zh-CN --service-sandbox-typ
+                 e=none --enable-logging=file --user-data-dir="C:\Users\seewo\AppData\Roaming\university-windows-teacher" --standard-schemes --secure-schemes --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=sentry-ip
+                 c --service-worker-schemes --streaming-schemes --enable-logging=file --log-file="C:\Users\seewo\AppData\Roaming\Seewo\seewoPincoTeacher\logs\2026-07-06\electron.13-13-59-093.log" --mojo-platform-channel-handle=2296 /prefetc
+                 h:8
+ProcessId      : 16032
+Name           : crashpad_handler.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\crashpad_handler.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\crashpad_handler.exe" --no-rate-limit --database=C:\Users\seewo\AppData\Roaming\seewo\seewoPincoTeacherService\sentry-native --metri
+                 cs-dir=C:\Users\seewo\AppData\Roaming\seewo\seewoPincoTeacherService\sentry-native --url=https://sentry.cvtapi.com:443/api/44/minidump/?sentry_client=sentry.native/0.4.16&sentry_key=a9a5d37eef0546c6ae20e94da3a57540 --attach
+                 ment=C:\Users\seewo\AppData\Roaming/seewo/seewoPincoTeacherService/log/MaxhubAirClient.log --attachment=C:\Users\seewo\AppData\Roaming/seewo/seewoPincoTeacherService/log/seewoPincoTeacherService.log --attachment=C:\Users\se
+                 ewo\AppData\Roaming\seewo\seewoPincoTeacherService\sentry-native\e1a66ce7-617b-46fa-a238-8e2c0f69d280.run\__sentry-event --attachment=C:\Users\seewo\AppData\Roaming\seewo\seewoPincoTeacherService\sentry-native\e1a66ce7-617b
+                 -46fa-a238-8e2c0f69d280.run\__sentry-breadcrumb1 --attachment=C:\Users\seewo\AppData\Roaming\seewo\seewoPincoTeacherService\sentry-native\e1a66ce7-617b-46fa-a238-8e2c0f69d280.run\__sentry-breadcrumb2 --initial-client-data=0
+                 x5f4,0x5ac,0x5b0,0x604,0x5a4,0x73912d80,0x73912d94,0x73912da4
+ProcessId      : 4828
+Name           : PincoMirror.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\PincoMirror\PincoMirror.exe
+CommandLine    : PincoMirror.exe  /port=64862 /role=terminal
+ProcessId      : 16312
+Name           : crashpad_handler.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\PincoMirror\crashpad_handler.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\PincoMirror\crashpad_handler.exe" --no-rate-limit --database=C:\Users\seewo\AppData\Roaming\seewo\PincoMirror\sentry-native --metric
+                 s-dir=C:\Users\seewo\AppData\Roaming\seewo\PincoMirror\sentry-native --url=https://sentry.cvtapi.com:443/api/44/minidump/?sentry_client=sentry.native/0.4.16&sentry_key=a9a5d37eef0546c6ae20e94da3a57540 --attachment=C:\Users\
+                 seewo\AppData\Roaming/seewo/PincoMirror/log/PincoMirror.log --attachment=C:\Users\seewo\AppData\Roaming\seewo\PincoMirror\sentry-native\c634f2a9-d6aa-4ff0-ef3e-d9809348b781.run\__sentry-event --attachment=C:\Users\seewo\App
+                 Data\Roaming\seewo\PincoMirror\sentry-native\c634f2a9-d6aa-4ff0-ef3e-d9809348b781.run\__sentry-breadcrumb1 --attachment=C:\Users\seewo\AppData\Roaming\seewo\PincoMirror\sentry-native\c634f2a9-d6aa-4ff0-ef3e-d9809348b781.run
+                 \__sentry-breadcrumb2 --initial-client-data=0x47c,0x480,0x484,0x3e0,0x488,0x7bed2d80,0x7bed2d94,0x7bed2da4
+ProcessId      : 16316
+Name           : seewoPincoTeacher.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\seewoPincoTeacher.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\seewoPincoTeacher.exe" --type=renderer --user-data-dir="C:\Users\seewo\AppData\Roaming\university-windows-teacher" --standard-schemes --secure-sc
+                 hemes --bypasscsp-schemes=sentry-ipc --cors-schemes=sentry-ipc --fetch-schemes=sentry-ipc --service-worker-schemes --streaming-schemes --app-path="C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298
+                 \resources\app.asar" --no-sandbox --no-zygote --enable-logging=file --force-device-scale-factor=1 --log-file="C:\Users\seewo\AppData\Roaming\Seewo\seewoPincoTeacher\logs\2026-07-06\electron.13-13-59-093.log" --field-trial-h
+                 andle=2036,17645534516572207837,16424646840135326938,131072 --disable-features=CalculateNativeWinOcclusion,CookiesWithoutSameSiteMustBeSecure,SameSiteByDefaultCookies,SpareRendererForSitePerProcess,WinRetrieveSuggestionsOnl
+                 yOnDemand --lang=zh-CN --device-scale-factor=1 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --mojo-platform-channel-handle=3148 /prefetch:1
+ProcessId      : 2404
+Name           : SeewoServiceAssistant.exe
+ExecutablePath : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\SeewoServiceAssistant.exe
+CommandLine    : "C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\SeewoServiceAssistant.exe" --type=renderer --autoplay-policy=no-user-gesture-required --disable-touch-adjustment=true --field-trial-ha
+                 ndle=1788,2595105005257547203,3477708544676455875,131072 --enable-features=WebComponentsV0Enabled --disable-features=SpareRendererForSitePerProcess --disable-gpu-compositing --lang=zh-CN --app-path="C:\Program Files (x86)\S
+                 eewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\resources\app.asar" --node-integration --node-integration-in-worker --no-sandbox --no-zygote --enable-remote-module --background-color=#00FFFFFF --enable-spell
+                 check --enable-websql --disable-electron-site-instance-overrides --device-scale-factor=1.5 --num-raster-threads=4 --enable-main-frame-before-activation --renderer-client-id=5 --mojo-platform-channel-handle=2776 /prefetch:1
+ProcessId      : 13240
+Name           : OneDriveStandaloneUpdater.exe
+ExecutablePath : C:\Users\seewo\AppData\Local\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe
+CommandLine    : C:\Users\seewo\AppData\Local\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe
+ProcessId      : 12488
+Name           : OneDriveStandaloneUpdater.exe
+ExecutablePath : C:\Users\seewo\AppData\Local\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe
+CommandLine    : C:\Users\seewo\AppData\Local\Microsoft\OneDrive\OneDriveStandaloneUpdater.exe /reporting
+
+==== Matching Uninstall Registry Entries ====
+DisplayName     : 硬件设备处理器
+DisplayVersion  : 5.2.7.566
+Publisher       : SEEWO
+InstallLocation : 
+DisplayIcon     : C:\Program Files (x86)\SEEWO\HardwareInfo\HardwareInfo_5.2.7.566\HardwareInfo.exe
+UninstallString : C:\Program Files (x86)\SEEWO\HardwareInfo\Uninstall.exe
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{1c531e70-8a81-4291-a1b8-65bf26c7402f}
+DisplayName     : EasiUpdate
+DisplayVersion  : 1.1.2.395
+Publisher       : Seewo
+InstallLocation : 
+DisplayIcon     : C:\ProgramData\Seewo\Easiupdate\EasiUpdate.exe
+UninstallString : C:\ProgramData\Seewo\Easiupdate\Uninstall.exe
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{372580DA-09BF-45FF-9C3C-B226CCFC1F79}
+DisplayName     : EasiAgent
+DisplayVersion  : 0.0.1.134
+Publisher       : Seewo
+InstallLocation : 
+DisplayIcon     : C:\Program Files (x86)\Seewo\EasiAgent\EasiAgent.exe
+UninstallString : C:\Program Files (x86)\Seewo\EasiAgent\Uninstall.exe
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{54277189-FC4A-4AB1-8179-4EAE98219D6B}
+DisplayName     : 希沃管家
+DisplayVersion  : 1.6.6.3993
+Publisher       : Seewo
+InstallLocation : 
+DisplayIcon     : C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher\SeewoHugoLauncher.exe
+UninstallString : C:\Program Files (x86)\Seewo\SeewoService\Uninstall.exe
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{5BD92A17-E78F-41C1-B9CF-D886BBD3FE3C}
+DisplayName     : 希沃品课
+DisplayVersion  : 1.2.43.7298
+Publisher       : Seewo
+InstallLocation : 
+DisplayIcon     : C:\Program Files (x86)\Seewo\seewoPincoTeacher\SWLauncher\SWLauncher.exe
+UninstallString : C:\Program Files (x86)\Seewo\seewoPincoTeacher\Uninstall.exe
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{75671baa-4326-48a9-9623-83d60ec8a63d}
+DisplayName     : EasiUpdate3
+DisplayVersion  : 3.5.0.911
+Publisher       : seewo
+InstallLocation : 
+DisplayIcon     : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\EasiUpdate3.exe
+UninstallString : C:\ProgramData\Seewo\Easiupdate3\Uninstall.exe
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{A89E781E-89E0-432D-A06C-92E3F80E09BE}
+DisplayName     : 轻录播
+DisplayVersion  : 1.0.2.540
+Publisher       : Seewo
+InstallLocation : 
+DisplayIcon     : C:\Program Files (x86)\Seewo\EasiRecorder\EasiRecorder.exe
+UninstallString : C:\Program Files (x86)\Seewo\EasiRecorder\Uninstall.exe
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\{cdf5c2a3-f1c9-4ae3-96ea-c9cc8be2f7be}
+DisplayName     : Microsoft OneDrive
+DisplayVersion  : 23.246.1127.0002
+Publisher       : Microsoft Corporation
+InstallLocation : 
+DisplayIcon     : C:\Users\seewo\AppData\Local\Microsoft\OneDrive\23.246.1127.0002\OneDriveSetup.exe,-101
+UninstallString : "C:\Users\seewo\AppData\Local\Microsoft\OneDrive\23.246.1127.0002\OneDriveSetup.exe"  /uninstall 
+PSPath          : Microsoft.PowerShell.Core\Registry::HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\OneDriveSetup.exe
+
+==== Matching Shortcut Targets ====
+Shortcut         : C:\Users\seewo\Desktop\品课使用帮助.lnk
+Target           : C:\Program Files (x86)\Seewo\seewoPincoTeacher\SWLauncher\SWHelperLauncher.exe
+Arguments        : 
+WorkingDirectory : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.37.7090\pincoService\..\..\SWLauncher
+Shortcut         : C:\Users\seewo\Desktop\希沃品课 (2).lnk
+Target           : C:\Program Files (x86)\Seewo\seewoPincoTeacher\SWLauncher\SWLauncher.exe
+Arguments        : 
+WorkingDirectory : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.23.6457\pincoService\..\..\SWLauncher
+Shortcut         : C:\Users\seewo\Desktop\希沃品课.lnk
+Target           : C:\Program Files (x86)\Seewo\seewoPincoTeacher\SWLauncher\SWLauncher.exe
+Arguments        : 
+WorkingDirectory : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.23.6457\pincoService\..\..\SWLauncher
+Shortcut         : C:\Users\Public\Desktop\希沃桌面.lnk
+Target           : C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher\SeewoHugoLauncher.exe
+Arguments        : /runmode=launcher /bootPolicy=seewoDesktop
+WorkingDirectory : 
+Shortcut         : C:\Users\Public\Desktop\希沃管家.lnk
+Target           : C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher\SeewoHugoLauncher.exe
+Arguments        : /runmode=launcher
+WorkingDirectory : 
+Shortcut         : C:\Users\Public\Desktop\轻录播.lnk
+Target           : C:\Program Files (x86)\Seewo\EasiRecorder\EasiRecorder.exe
+Arguments        : 
+WorkingDirectory : C:\Program Files (x86)\Seewo\EasiRecorder
+Shortcut         : C:\Users\seewo\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\OneDrive.lnk
+Target           : C:\Users\seewo\AppData\Local\Microsoft\OneDrive\OneDrive.exe
+Arguments        : 
+WorkingDirectory : 
+Shortcut         : C:\ProgramData\Microsoft\Windows\Start Menu\Programs\希沃软件\希沃品课\希沃品课.lnk
+Target           : C:\Program Files (x86)\Seewo\seewoPincoTeacher\SWLauncher\SWLauncher.exe
+Arguments        : 
+WorkingDirectory : C:\Program Files (x86)\Seewo\seewoPincoTeacher
+Shortcut         : C:\ProgramData\Microsoft\Windows\Start Menu\Programs\希沃软件\希沃管家\希沃管家.lnk
+Target           : C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher\SeewoHugoLauncher.exe
+Arguments        : /runmode=launcher
+WorkingDirectory : 
+Shortcut         : C:\ProgramData\Microsoft\Windows\Start Menu\Programs\希沃软件\轻录播\轻录播.lnk
+Target           : C:\Program Files (x86)\Seewo\EasiRecorder\EasiRecorder.exe
+Arguments        : 
+WorkingDirectory : C:\Program Files (x86)\Seewo\EasiRecorder
+
+==== Candidate Executable Files ====
+Path          : C:\Program Files (x86)\Seewo\EasiAgent\EasiAgent.exe
+SizeMB        : 1.5
+LastWriteTime : 2024/1/11 9:35:00
+Path          : C:\Program Files (x86)\Seewo\EasiAgent\Uninstall.exe
+SizeMB        : 0.15
+LastWriteTime : 2026/6/25 17:05:19
+Path          : C:\Program Files (x86)\Seewo\EasiRecorder\converttools\ffmpeg.exe
+SizeMB        : 34.55
+LastWriteTime : 2021/8/19 15:05:54
+Path          : C:\Program Files (x86)\Seewo\EasiRecorder\CrashRpt.exe
+SizeMB        : 0.47
+LastWriteTime : 2021/8/19 15:07:14
+Path          : C:\Program Files (x86)\Seewo\EasiRecorder\EasiRecorder.exe
+SizeMB        : 1.56
+LastWriteTime : 2021/8/19 15:07:12
+Path          : C:\Program Files (x86)\Seewo\EasiRecorder\EasiUpdateSetup.exe
+SizeMB        : 13.38
+LastWriteTime : 2021/8/19 15:07:12
+Path          : C:\Program Files (x86)\Seewo\EasiRecorder\SWMonitorDpi.exe
+SizeMB        : 0.04
+LastWriteTime : 2021/8/19 15:07:14
+Path          : C:\Program Files (x86)\Seewo\EasiRecorder\Uninstall.exe
+SizeMB        : 0.4
+LastWriteTime : 2022/10/12 13:29:03
+Path          : C:\Program Files (x86)\Seewo\HardwareInfo\HardwareInfo\ClearRedundantFolder.exe
+SizeMB        : 0.01
+LastWriteTime : 2022/1/18 16:39:50
+Path          : C:\Program Files (x86)\Seewo\HardwareInfo\HardwareInfo\CrashRpt.exe
+SizeMB        : 0.4
+LastWriteTime : 2022/1/18 16:39:52
+Path          : C:\Program Files (x86)\Seewo\HardwareInfo\HardwareInfo\HardwareInfo.Defender.exe
+SizeMB        : 0.02
+LastWriteTime : 2022/1/18 16:39:52
+Path          : C:\Program Files (x86)\Seewo\HardwareInfo\HardwareInfo\HardwareInfo.exe
+SizeMB        : 0.04
+LastWriteTime : 2022/1/18 16:39:52
+Path          : C:\Program Files (x86)\Seewo\HardwareInfo\HardwareInfo_5.2.7.566\ClearRedundantFolder.exe
+SizeMB        : 0.01
+LastWriteTime : 2022/1/18 16:39:50
+Path          : C:\Program Files (x86)\Seewo\HardwareInfo\HardwareInfo_5.2.7.566\CrashRpt.exe
+SizeMB        : 0.4
+LastWriteTime : 2022/1/18 16:39:52
+Path          : C:\Program Files (x86)\Seewo\HardwareInfo\HardwareInfo_5.2.7.566\HardwareInfo.Defender.exe
+SizeMB        : 0.02
+LastWriteTime : 2022/1/18 16:39:52
+Path          : C:\Program Files (x86)\Seewo\HardwareInfo\HardwareInfo_5.2.7.566\HardwareInfo.exe
+SizeMB        : 0.04
+LastWriteTime : 2022/1/18 16:39:52
+Path          : C:\Program Files (x86)\Seewo\HardwareInfo\Uninstall.exe
+SizeMB        : 0.4
+LastWriteTime : 2022/3/14 16:10:59
+Path          : C:\Program Files (x86)\Seewo\SeewoLicense\UserActivater.exe
+SizeMB        : 0.08
+LastWriteTime : 2019/10/22 9:24:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\enService\BoardService.exe
+SizeMB        : 0.15
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\Main\SupportFiles\EasiNote5CSetup.exe
+SizeMB        : 166.29
+LastWriteTime : 2024/8/30 11:48:08
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\Main\SupportFiles\EasiUpdateSetup.exe
+SizeMB        : 3
+LastWriteTime : 2022/9/16 12:16:36
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\Main\SupportFiles\VC_redist.x86.exe
+SizeMB        : 13.22
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\crashpad_handler.exe
+SizeMB        : 0.81
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\dpi_getter.exe
+SizeMB        : 0.03
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\iperf2.exe
+SizeMB        : 0.31
+LastWriteTime : 2021/6/9 10:13:26
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\magnifier_process.exe
+SizeMB        : 0.36
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\office_registry_recover.exe
+SizeMB        : 0.23
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\pinco_cloud_sync_upload.exe
+SizeMB        : 2.3
+LastWriteTime : 2024/9/29 21:26:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\pincoMirror\crashpad_handler.exe
+SizeMB        : 0.81
+LastWriteTime : 2024/8/30 11:48:04
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\pincoMirror\DeployTool.exe
+SizeMB        : 0.71
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\pincoMirror\PincoMirror.exe
+SizeMB        : 11.79
+LastWriteTime : 2024/9/29 21:26:37
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\pincoMirror\SWLauncherShell.exe
+SizeMB        : 1
+LastWriteTime : 2024/8/30 11:48:04
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\RegAppItemsTool.exe
+SizeMB        : 0.27
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\seewoPincoTeacherAdminMonitorService.exe
+SizeMB        : 0.87
+LastWriteTime : 2024/8/30 11:48:04
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\seewoPincoTeacherAdminService.exe
+SizeMB        : 1.41
+LastWriteTime : 2024/8/30 11:48:04
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\seewoPincoTeacherService.exe
+SizeMB        : 21.23
+LastWriteTime : 2024/9/29 21:26:33
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\SWEasiUpdateFix.exe
+SizeMB        : 0.4
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\SWSTAudioController.exe
+SizeMB        : 0.1
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\pincoService\VerifyFilesChecksum.exe
+SizeMB        : 0.07
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7244\seewoPincoTeacher.exe
+SizeMB        : 113.05
+LastWriteTime : 2024/9/29 21:26:31
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\enService\BoardService.exe
+SizeMB        : 0.15
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\Main\SupportFiles\EasiNote5CSetup.exe
+SizeMB        : 166.32
+LastWriteTime : 2024/9/29 14:06:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\Main\SupportFiles\EasiUpdateSetup.exe
+SizeMB        : 3
+LastWriteTime : 2022/9/16 12:16:36
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\Main\SupportFiles\VC_redist.x86.exe
+SizeMB        : 13.22
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\crashpad_handler.exe
+SizeMB        : 0.81
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\dpi_getter.exe
+SizeMB        : 0.03
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\iperf2.exe
+SizeMB        : 0.31
+LastWriteTime : 2021/6/9 10:13:26
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\magnifier_process.exe
+SizeMB        : 0.36
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\office_registry_recover.exe
+SizeMB        : 0.23
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\pinco_cloud_sync_upload.exe
+SizeMB        : 2.3
+LastWriteTime : 2024/10/12 19:11:58
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\pincoMirror\crashpad_handler.exe
+SizeMB        : 0.81
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\pincoMirror\DeployTool.exe
+SizeMB        : 0.71
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\pincoMirror\PincoMirror.exe
+SizeMB        : 11.79
+LastWriteTime : 2024/10/12 19:11:59
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\pincoMirror\SWLauncherShell.exe
+SizeMB        : 1
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\RegAppItemsTool.exe
+SizeMB        : 0.27
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\seewoPincoTeacherAdminMonitorService.exe
+SizeMB        : 0.87
+LastWriteTime : 2024/9/29 14:06:32
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\seewoPincoTeacherAdminService.exe
+SizeMB        : 1.41
+LastWriteTime : 2024/9/29 14:06:32
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\seewoPincoTeacherService.exe
+SizeMB        : 21.23
+LastWriteTime : 2024/10/12 19:11:56
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\SWEasiUpdateFix.exe
+SizeMB        : 0.4
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\SWSTAudioController.exe
+SizeMB        : 0.1
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\pincoService\VerifyFilesChecksum.exe
+SizeMB        : 0.07
+LastWriteTime : 2024/9/29 14:06:34
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7250\seewoPincoTeacher.exe
+SizeMB        : 113.05
+LastWriteTime : 2024/10/12 19:11:52
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\enService\BoardService.exe
+SizeMB        : 0.14
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\Main\SupportFiles\EasiNote5CSetup.exe
+SizeMB        : 167.19
+LastWriteTime : 2025/3/20 12:49:24
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\Main\SupportFiles\EasiUpdateSetup.exe
+SizeMB        : 3
+LastWriteTime : 2022/9/16 12:16:36
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\Main\SupportFiles\VC_redist.x86.exe
+SizeMB        : 13.22
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\crashpad_handler.exe
+SizeMB        : 0.8
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\dpi_getter.exe
+SizeMB        : 0.02
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\iperf2.exe
+SizeMB        : 0.31
+LastWriteTime : 2021/6/9 10:13:26
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\magnifier_process.exe
+SizeMB        : 0.35
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\office_registry_recover.exe
+SizeMB        : 0.22
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\pinco_cloud_sync_upload.exe
+SizeMB        : 2.29
+LastWriteTime : 2025/4/3 22:03:48
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\pincoMirror\crashpad_handler.exe
+SizeMB        : 0.8
+LastWriteTime : 2025/3/20 12:49:20
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\pincoMirror\DeployTool.exe
+SizeMB        : 0.7
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\pincoMirror\PincoMirror.exe
+SizeMB        : 11.78
+LastWriteTime : 2025/4/3 22:03:51
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\pincoMirror\SWLauncherShell.exe
+SizeMB        : 0.99
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\RegAppItemsTool.exe
+SizeMB        : 0.26
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\seewoPincoTeacherAdminMonitorService.exe
+SizeMB        : 0.86
+LastWriteTime : 2025/3/20 12:49:20
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\seewoPincoTeacherAdminService.exe
+SizeMB        : 1.4
+LastWriteTime : 2025/3/20 12:49:20
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\seewoPincoTeacherService.exe
+SizeMB        : 21.22
+LastWriteTime : 2025/4/3 22:03:48
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\SWEasiUpdateFix.exe
+SizeMB        : 0.39
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\SWSTAudioController.exe
+SizeMB        : 0.09
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\pincoService\VerifyFilesChecksum.exe
+SizeMB        : 0.07
+LastWriteTime : 2025/3/20 12:49:22
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7270\seewoPincoTeacher.exe
+SizeMB        : 113.04
+LastWriteTime : 2025/4/3 22:03:45
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\enService\BoardService.exe
+SizeMB        : 0.14
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\Main\SupportFiles\EasiNote5CSetup.exe
+SizeMB        : 167.19
+LastWriteTime : 2025/3/20 12:49:24
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\Main\SupportFiles\EasiUpdateSetup.exe
+SizeMB        : 3
+LastWriteTime : 2022/9/16 12:16:36
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\Main\SupportFiles\VC_redist.x86.exe
+SizeMB        : 13.22
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\crashpad_handler.exe
+SizeMB        : 0.8
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\dpi_getter.exe
+SizeMB        : 0.02
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\iperf2.exe
+SizeMB        : 0.31
+LastWriteTime : 2021/6/9 10:13:26
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\magnifier_process.exe
+SizeMB        : 0.36
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\office_registry_recover.exe
+SizeMB        : 0.22
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\pinco_cloud_sync_upload.exe
+SizeMB        : 2.29
+LastWriteTime : 2025/9/29 18:03:51
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\pincoMirror\crashpad_handler.exe
+SizeMB        : 0.8
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\pincoMirror\DeployTool.exe
+SizeMB        : 0.7
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\pincoMirror\PincoMirror.exe
+SizeMB        : 11.78
+LastWriteTime : 2025/9/29 18:03:53
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\pincoMirror\SWLauncherShell.exe
+SizeMB        : 0.99
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\RegAppItemsTool.exe
+SizeMB        : 0.26
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\seewoPincoTeacherAdminMonitorService.exe
+SizeMB        : 0.86
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\seewoPincoTeacherAdminService.exe
+SizeMB        : 1.4
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\seewoPincoTeacherService.exe
+SizeMB        : 21.22
+LastWriteTime : 2025/9/29 18:03:50
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\SWEasiUpdateFix.exe
+SizeMB        : 0.39
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\SWSTAudioController.exe
+SizeMB        : 0.09
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\pincoService\VerifyFilesChecksum.exe
+SizeMB        : 0.07
+LastWriteTime : 2025/9/1 17:56:14
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7285\seewoPincoTeacher.exe
+SizeMB        : 113.04
+LastWriteTime : 2025/9/29 18:03:48
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\enService\BoardService.exe
+SizeMB        : 0.14
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\Main\SupportFiles\EasiNote5CSetup.exe
+SizeMB        : 164.49
+LastWriteTime : 2026/1/27 9:20:40
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\Main\SupportFiles\EasiUpdateSetup.exe
+SizeMB        : 3
+LastWriteTime : 2022/9/16 12:16:36
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\Main\SupportFiles\VC_redist.x86.exe
+SizeMB        : 13.22
+LastWriteTime : 2024/8/30 11:48:06
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\crashpad_handler.exe
+SizeMB        : 0.8
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\dpi_getter.exe
+SizeMB        : 0.02
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\iperf2.exe
+SizeMB        : 0.31
+LastWriteTime : 2021/6/9 10:13:26
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\magnifier_process.exe
+SizeMB        : 0.36
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\office_registry_recover.exe
+SizeMB        : 0.22
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\pinco_cloud_sync_upload.exe
+SizeMB        : 2.29
+LastWriteTime : 2026/3/11 21:04:11
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\pincoMirror\crashpad_handler.exe
+SizeMB        : 0.8
+LastWriteTime : 2026/1/27 9:20:36
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\pincoMirror\DeployTool.exe
+SizeMB        : 0.7
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\pincoMirror\PincoMirror.exe
+SizeMB        : 11.78
+LastWriteTime : 2026/3/11 21:04:16
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\pincoMirror\SWLauncherShell.exe
+SizeMB        : 0.99
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\RegAppItemsTool.exe
+SizeMB        : 0.26
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\seewoPincoTeacherAdminMonitorService.exe
+SizeMB        : 0.86
+LastWriteTime : 2026/1/27 9:20:36
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\seewoPincoTeacherAdminService.exe
+SizeMB        : 1.4
+LastWriteTime : 2026/1/27 9:20:36
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\seewoPincoTeacherService.exe
+SizeMB        : 21.22
+LastWriteTime : 2026/3/11 21:04:10
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\SWEasiUpdateFix.exe
+SizeMB        : 0.39
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\SWSTAudioController.exe
+SizeMB        : 0.09
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\pincoService\VerifyFilesChecksum.exe
+SizeMB        : 0.07
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\seewoPincoTeacher_1.2.43.7298\seewoPincoTeacher.exe
+SizeMB        : 113.04
+LastWriteTime : 2026/3/11 21:04:05
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\SWLauncher\SWHelperLauncher.exe
+SizeMB        : 0.14
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\SWLauncher\SWLauncher.exe
+SizeMB        : 0.23
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\SWLauncher\SWLauncherEN.exe
+SizeMB        : 0.15
+LastWriteTime : 2026/1/27 9:20:38
+Path          : C:\Program Files (x86)\Seewo\seewoPincoTeacher\Uninstall.exe
+SizeMB        : 0.43
+LastWriteTime : 2022/10/8 13:11:04
+Path          : C:\Program Files (x86)\Seewo\SeewoService\devcon\devcon64.exe
+SizeMB        : 0.09
+LastWriteTime : 2022/5/13 9:13:08
+Path          : C:\Program Files (x86)\Seewo\SeewoService\devcon\devcon86.exe
+SizeMB        : 0.09
+LastWriteTime : 2022/5/13 9:13:08
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher\CrashRpt.exe
+SizeMB        : 0.48
+LastWriteTime : 2023/6/21 12:46:10
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher\SeewoHugoLauncher.exe
+SizeMB        : 1
+LastWriteTime : 2023/6/21 12:46:10
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher_installVer\CrashRpt.exe
+SizeMB        : 0.48
+LastWriteTime : 2023/6/21 12:46:10
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher_installVer\SeewoHugoLauncher.exe
+SizeMB        : 1
+LastWriteTime : 2023/6/21 12:46:10
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\CrashRpt.exe
+SizeMB        : 0.48
+LastWriteTime : 2023/6/21 12:46:12
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\OtaTool.exe
+SizeMB        : 0.99
+LastWriteTime : 2023/6/21 12:46:12
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\packages\EasiAgentSetup.exe
+SizeMB        : 1.35
+LastWriteTime : 2026/6/16 9:42:52
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\packages\EasiUpdate3Setup.exe
+SizeMB        : 3.15
+LastWriteTime : 2026/6/16 9:42:52
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\ProxyLayerService\CrashRpt.exe
+SizeMB        : 0.48
+LastWriteTime : 2019/11/24 16:35:22
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\ProxyLayerService\proxyLayerService.exe
+SizeMB        : 1.01
+LastWriteTime : 2024/3/29 15:23:26
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoAbility\crashpad_handler.exe
+SizeMB        : 0.85
+LastWriteTime : 2023/8/10 11:45:28
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoAbility\SeewoAbility.exe
+SizeMB        : 1.35
+LastWriteTime : 2026/6/16 9:44:42
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\crashpad_handler.exe
+SizeMB        : 0.85
+LastWriteTime : 2023/8/10 11:45:28
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoCore\SeewoCore.exe
+SizeMB        : 1.98
+LastWriteTime : 2026/6/16 9:44:54
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoDriverService\CrashRpt.exe
+SizeMB        : 0.48
+LastWriteTime : 2024/6/17 10:56:04
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoDriverService\DriverService.exe
+SizeMB        : 0.35
+LastWriteTime : 2024/6/17 10:56:06
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoDriverService\log\tracelog.exe
+SizeMB        : 0.09
+LastWriteTime : 2024/6/17 10:56:06
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\BlueScreenView.exe
+SizeMB        : 0.06
+LastWriteTime : 2024/9/12 15:49:06
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\CoverShutdown.exe
+SizeMB        : 1.38
+LastWriteTime : 2024/9/12 15:55:12
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\crashpad_handler.exe
+SizeMB        : 0.85
+LastWriteTime : 2024/9/12 15:54:42
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\InjectAdapter.exe
+SizeMB        : 0.18
+LastWriteTime : 2024/9/12 15:54:36
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\Injector.exe
+SizeMB        : 0.1
+LastWriteTime : 2024/9/12 15:54:40
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\Installer.exe
+SizeMB        : 0.84
+LastWriteTime : 2024/9/12 15:54:40
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\InstallPackageTool.exe
+SizeMB        : 0.53
+LastWriteTime : 2024/9/12 15:54:36
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\PsExec.exe
+SizeMB        : 0.32
+LastWriteTime : 2024/6/17 10:56:06
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\ReserveFileUI.exe
+SizeMB        : 1.67
+LastWriteTime : 2024/9/12 15:54:36
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\SeewoFreezeUI.exe
+SizeMB        : 0.07
+LastWriteTime : 2024/9/12 15:54:36
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\SeewoFreezeUpdateAssist.exe
+SizeMB        : 2.57
+LastWriteTime : 2024/9/12 15:54:52
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\SeewoMiniDumpWriteDump.exe
+SizeMB        : 0.03
+LastWriteTime : 2024/9/12 15:54:42
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\SendEmail.exe
+SizeMB        : 0.66
+LastWriteTime : 2024/9/12 15:54:36
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\split.exe
+SizeMB        : 0.08
+LastWriteTime : 2024/9/12 15:54:38
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\SWAceUser.exe
+SizeMB        : 0.15
+LastWriteTime : 2024/6/17 10:56:06
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\SWBrookUser.exe
+SizeMB        : 0.02
+LastWriteTime : 2024/6/17 10:56:06
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\tracepdb.exe
+SizeMB        : 0.05
+LastWriteTime : 2024/9/12 15:23:12
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\UnfreezeOnPe.exe
+SizeMB        : 0.53
+LastWriteTime : 2024/9/12 15:54:44
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\x64\Injector.exe
+SizeMB        : 0.12
+LastWriteTime : 2024/9/12 15:54:48
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoFreeze\x64\tracepdb.exe
+SizeMB        : 0.06
+LastWriteTime : 2024/9/12 15:23:04
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoHugoLauncher\CrashRpt.exe
+SizeMB        : 0.48
+LastWriteTime : 2023/6/21 12:46:10
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoHugoLauncher\SeewoHugoLauncher.exe
+SizeMB        : 1
+LastWriteTime : 2023/6/21 12:46:10
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\SeewoServiceAssistant.exe
+SizeMB        : 91.02
+LastWriteTime : 2026/6/16 9:45:26
+Path          : C:\Program Files (x86)\Seewo\SeewoService\SeewoService_1.6.6.3993\SeewoServiceAssistant\ShowTaskBarTool.exe
+SizeMB        : 0.02
+LastWriteTime : 2026/6/2 16:35:58
+Path          : C:\Program Files (x86)\Seewo\SeewoService\Uninstall.exe
+SizeMB        : 0.21
+LastWriteTime : 2026/6/25 17:05:19
+Path          : C:\Program Files (x86)\Seewo\SeewoService\uninstall_verify.exe
+SizeMB        : 1.23
+LastWriteTime : 2026/6/16 9:44:48
+Path          : C:\Program Files (x86)\Seewo\SeewoServiceCheckGenius\UpgraderFtcTo41.exe
+SizeMB        : 0.14
+LastWriteTime : 2017/9/25 16:47:24
+Path          : C:\Program Files (x86)\Seewo\SeewoServiceCheckGenius\upgraderTo41\SilenceUpgrade.exe
+SizeMB        : 0.7
+LastWriteTime : 2017/9/25 16:47:20
+Path          : C:\ProgramData\seewo\CoverShutdownExe\CoverShutdown.exe
+SizeMB        : 1.38
+LastWriteTime : 2024/9/12 15:55:12
+Path          : C:\ProgramData\seewo\CoverShutdownExe\crashpad_handler.exe
+SizeMB        : 0.85
+LastWriteTime : 2024/9/12 15:54:42
+Path          : C:\ProgramData\seewo\Easiupdate\easiupdate\EasiUpdate.exe
+SizeMB        : 1.36
+LastWriteTime : 2017/9/25 17:09:16
+Path          : C:\ProgramData\seewo\Easiupdate\patch\SeewoServiceCheckGeniusSetup.exe
+SizeMB        : 10.94
+LastWriteTime : 2017/9/25 17:08:22
+Path          : C:\ProgramData\seewo\Easiupdate\Uninstall.exe
+SizeMB        : 0.05
+LastWriteTime : 2021/5/21 21:47:49
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3\CrashRpt.exe
+SizeMB        : 0.49
+LastWriteTime : 2024/10/18 9:58:58
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3\EasiUpdate3.exe
+SizeMB        : 3.51
+LastWriteTime : 2024/10/18 9:59:00
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3\EasiUpdate3Protect.exe
+SizeMB        : 0.79
+LastWriteTime : 2024/10/18 9:59:02
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3\Eu3After.exe
+SizeMB        : 0.45
+LastWriteTime : 2024/10/18 9:59:06
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.910\CrashRpt.exe
+SizeMB        : 0.48
+LastWriteTime : 2025/9/17 17:10:20
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.910\EasiUpdate3.exe
+SizeMB        : 3.5
+LastWriteTime : 2025/9/17 17:10:20
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.910\EasiUpdate3Protect.exe
+SizeMB        : 0.78
+LastWriteTime : 2025/9/17 17:10:20
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.910\Eu3After.exe
+SizeMB        : 0.44
+LastWriteTime : 2025/9/17 17:10:20
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\CrashRpt.exe
+SizeMB        : 0.48
+LastWriteTime : 2025/10/30 11:44:24
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\EasiUpdate3.exe
+SizeMB        : 3.5
+LastWriteTime : 2025/10/30 11:44:24
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\EasiUpdate3Protect.exe
+SizeMB        : 0.78
+LastWriteTime : 2025/10/30 11:44:24
+Path          : C:\ProgramData\seewo\Easiupdate3\Easiupdate3_3.5.0.911\Eu3After.exe
+SizeMB        : 0.44
+LastWriteTime : 2025/10/30 11:44:24
+Path          : C:\ProgramData\seewo\Easiupdate3\Uninstall.exe
+SizeMB        : 0.05
+LastWriteTime : 2024/11/5 20:36:50
+Path          : C:\ProgramData\seewo\Easiupdate3Download\670752cc831b286a1af71929810a395b74926b31\app-1.2.1.2425-1.2.6.2709.exe
+SizeMB        : 106.84
+LastWriteTime : 2021/10/11 7:51:26
+Path          : C:\ProgramData\seewo\Easiupdate3Download\670752cc831b286a1af71929810a395b74926b31\app-1.2.1.2425-1.2.6.2717.exe
+SizeMB        : 106.84
+LastWriteTime : 2021/10/19 11:48:20
+Path          : C:\ProgramData\seewo\InjectExe\Injector.exe
+SizeMB        : 0.1
+LastWriteTime : 2024/9/12 15:54:40
+Path          : C:\ProgramData\seewo\InjectExe\x64\Injector.exe
+SizeMB        : 0.12
+LastWriteTime : 2024/9/12 15:54:48
+Path          : C:\ProgramData\seewo\InjectExe\x64\StackFrameAnalysis.exe
+SizeMB        : 0.16
+LastWriteTime : 2020/9/21 16:24:38
+Path          : C:\ProgramData\seewo\InjectExe\x64\tracepdb.exe
+SizeMB        : 0.06
+LastWriteTime : 2024/9/12 15:23:04
+
+==== Visible Top-Level Windows ====
+
+FATAL: 使用“2”个参数调用“GetWindowThreadProcessId”时发生异常:“无法覆盖变量 PID，因为该变量为只读变量或常量。”
+STACK: 在 <ScriptBlock>、F:\新建文件夹\AHKSCRIPT\tools\probe_env.ps1 中: 第 279 行
+在 Get-TopLevelWindows、F:\新建文件夹\AHKSCRIPT\tools\probe_env.ps1 中: 第 303 行
+在 <ScriptBlock>、F:\新建文件夹\AHKSCRIPT\tools\probe_env.ps1 中: 第 485 行
