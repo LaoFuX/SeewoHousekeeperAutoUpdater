@@ -73,9 +73,15 @@ SubmitPassword(winSpec, pwd) {
     y := Config_ReadFloat("Coords", "PasswordInputY", 0.49)
     Keyboard_KillTouchKeyboardProcesses("before password input")
     ClickRatio(winSpec, "password input", x, y)
-    PasteText(pwd)
-    Logger_Log("INFO", "Password was pasted.")
-    Keyboard_KillTouchKeyboardProcesses("after password paste")
+    SleepCfg("Keyboard", "AfterPasswordInputClickDelayMs", 500)
+    CloseTouchKeyboard("after password input click")
+    if (Config_ReadBool("Keyboard", "RefocusPasswordInputAfterKeyboardClose", true)) {
+        ClickRatio(winSpec, "password input refocus", x, y)
+        SleepCfg("Keyboard", "AfterPasswordInputRefocusDelayMs", 150)
+    }
+    InputPasswordText(pwd)
+    Keyboard_KillTouchKeyboardProcesses("after password input")
+    SleepCfg("Keyboard", "AfterPasswordInputDelayMs", 250)
     CloseTouchKeyboard("before password next")
 
     x := Config_ReadFloat("Coords", "PasswordNextX", 0.50)

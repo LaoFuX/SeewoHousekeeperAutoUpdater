@@ -1,58 +1,34 @@
-# 希沃管家更新工具 - 两入口版说明
+# 希沃管家自动更新工具 - 两入口版
 
 ## 一、工具用途
 
-本工具用于希沃管家维护。新版取消 1、2、3、4 菜单选择，老师只需要按场景双击对应入口。
+本工具用于维护装有冰点/冻结保护的希沃管家电脑。
 
-正式使用入口：
+当前版本已经取消旧版 `1/2/3/4` 菜单，改为两个直接入口：
 
 ```text
 unlock-and-restart.bat
-  入口 1：解锁/解冻冰点，并立即重启。
+  入口 1：解锁/解冻冰点，然后立即重启。
 
 main.bat
-  入口 2：更新希沃管家，成功后自动上锁/冻结冰点，并立即重启。
+  入口 2：更新希沃管家，更新成功后自动上锁/冻结冰点，然后立即重启。
 ```
 
-## 二、重要提醒
-
-两入口版的完整维护顺序是：
+推荐完整流程：
 
 ```text
 第一步：双击 unlock-and-restart.bat
-  解锁/解冻冰点，然后电脑重启。
+  电脑解冻并重启。
 
-第二步：重启回来后，双击 main.bat
-  更新希沃管家，更新成功后上锁/冻结冰点，然后电脑重启。
+第二步：电脑重启回来后，双击 main.bat
+  希沃管家更新完成后，上锁并重启。
 ```
 
-`main.bat` 不会先解锁冰点。它适用于第一步已经完成、电脑已经处于解冻/可写状态的维护场景。
+`main.bat` 不会先执行解锁。它适用于电脑已经处于解冻/可写状态的场景。
 
-如果电脑当前仍处于冻结状态，直接运行 `main.bat`，更新可能会在重启后被冰点还原。
+## 二、交付包文件结构
 
-正确流程是先运行：
-
-```bat
-unlock-and-restart.bat
-```
-
-电脑重启后，再运行：
-
-```bat
-main.bat
-```
-
-冰点相关功能完成后可能立即重启。使用前请确认：
-
-- 当前电脑没有正在编辑但未保存的文件
-- 不要在自动化过程中移动鼠标或操作键盘
-- 不要修改文件名和目录结构
-- 不要删除 `config`、`scripts`、`logs` 文件夹
-- 尽量不要让希沃窗口被挡住
-
-## 三、正式版文件结构
-
-正式交付包建议保留以下内容：
+正式交付给老师时，建议保留这些文件：
 
 ```text
 unlock-and-restart.bat
@@ -67,38 +43,40 @@ logs/
 README.md
 ```
 
-各文件作用如下：
+各文件作用：
 
 ```text
 unlock-and-restart.bat
-  老师入口 1。调用 unlock.exe 解锁/解冻冰点并重启。
+  老师入口 1。调用 unlock.exe 完成解锁/解冻和重启。
 
 main.bat
-  老师入口 2。更新希沃管家，成功后调用 lock.exe 上锁/冻结冰点并重启。
+  老师入口 2。调用 download.bat 更新希沃管家，成功后调用 lock.exe 上锁/冻结并重启。
 
 download.bat
-  更新模块。优先使用官方源，官方源不可用时走 VPS 备用源。
+  更新入口。优先使用官方下载更新逻辑，保留 VPS 备用逻辑。
 
 backup.bat
-  VPS 备用源更新模块，保留给维护人员手动排查时使用。
+  VPS 备用更新入口，主要给维护人员排查时使用。
 
 unlock.exe
-  解锁/解冻冰点模块。由 AutoHotkey 编译生成，老师电脑无需安装 AutoHotkey。
+  解锁/解冻 GUI 自动化程序，由 AutoHotkey 源码编译生成。
 
 lock.exe
-  上锁/冻结冰点模块。由 AutoHotkey 编译生成，老师电脑无需安装 AutoHotkey。
+  上锁/冻结 GUI 自动化程序，由 AutoHotkey 源码编译生成。
 
 config/app.ini
-  配置文件。保存密码、目标磁盘、程序路径、等待时间等配置。
+  配置文件。保存密码、目标磁盘、程序路径、等待时间、窗口修复和键盘处理策略。
 
 scripts/seewo-update.ps1
   下载、版本检测、静默安装的 PowerShell 核心逻辑。
 
 logs/
-  日志目录。程序运行后会在里面生成日志。
+  日志目录。更新日志在 logs/update，GUI 自动化日志在 logs/freeze。
 ```
 
-## 四、两个入口的调用关系
+老师电脑不需要安装 AutoHotkey，也不需要携带 AutoHotkey.exe。
+
+## 三、两个入口的调用关系
 
 ### 1. 解锁并重启
 
@@ -108,15 +86,14 @@ logs/
 unlock-and-restart.bat
 ```
 
-执行流程：
+执行链路：
 
 ```text
 unlock-and-restart.bat
   -> unlock.exe
-  -> 立即重启
+  -> 解锁/解冻冰点
+  -> 点击立即重启
 ```
-
-这一步完成后，电脑会进入解冻/可写状态，方便下一步更新软件。
 
 ### 2. 更新并上锁重启
 
@@ -126,19 +103,20 @@ unlock-and-restart.bat
 main.bat
 ```
 
-执行流程：
+执行链路：
 
 ```text
 main.bat
   -> download.bat
   -> scripts/seewo-update.ps1
   -> lock.exe
-  -> 立即重启
+  -> 上锁/冻结冰点
+  -> 点击立即重启
 ```
 
-如果更新失败，程序会停止，不会继续上锁。这样设计是为了避免“更新没有成功，却把机器重新冻结”的情况。
+如果更新失败，`main.bat` 会停止，不会继续执行上锁。这样可以避免“软件没有更新成功，却又重新冻结电脑”的情况。
 
-## 五、配置文件
+## 四、常用配置
 
 配置文件位置：
 
@@ -146,125 +124,172 @@ main.bat
 config/app.ini
 ```
 
-常用配置在 `[Freeze]` 段：
+### 1. 密码
 
 ```ini
 [Freeze]
 Password=
-Drives=C
-AutoRestart=1
 ```
 
-### 1. 密码配置
+如果 `Password=` 留空，运行时会弹出密码输入框。
 
-如果不想把密码写进配置文件，保持为空：
-
-```ini
-Password=
-```
-
-运行冰点功能时，会弹出英文密码输入框，临时输入密码。
-
-如果希望全自动运行，可以填写密码：
+如果要全自动运行，可以填写冰点密码：
 
 ```ini
 Password=123456
 ```
 
-注意：密码明文保存在配置文件中，请不要把正式包交给无关人员。
+注意：密码会明文保存在配置文件里，交付包不要发给无关人员。
 
 ### 2. 目标磁盘
 
-默认只操作 C 盘：
+只处理 C 盘：
 
 ```ini
 Drives=C
 ```
 
-如果需要同时操作 C 盘和 E 盘：
+同时处理 C 盘和 E 盘：
 
 ```ini
 Drives=C,E
 ```
 
-### 3. 是否自动重启
+### 3. 自动重启
 
-正式使用默认立即重启：
+正式使用建议保持：
 
 ```ini
 AutoRestart=1
 ```
 
-如果维护人员调试时不希望自动点击重启，可以临时改成：
+调试时如果不想让程序最后自动点击重启，可以临时改成：
 
 ```ini
 AutoRestart=0
 ```
 
-正式上课使用建议保持 `AutoRestart=1`。
+## 五、GUI 自动化策略
 
-## 六、自动化稳定性配置
+希沃管家界面属于 Chromium/Electron 类窗口。外层窗口能被 Windows 识别，但内部按钮、输入框通常不能稳定暴露为标准控件。
 
-希沃管家是 Chromium/Electron 类界面，Windows UI Automation 无法识别内部按钮和输入框。因此本工具采用：
+所以本项目采用：
 
 ```text
-窗口定位 + 窗口内相对位置点击 + 配置化等待
+窗口识别
++ 候选窗口筛选
++ 窗口内相对位置点击
++ 配置化等待时间
++ 日志记录
+```
+
+这比固定屏幕绝对坐标更稳。窗口移动或分辨率变化时，只要窗口比例结构没有大变，点击位置仍然能跟随窗口计算。
+
+## 六、当前版本的稳定性处理
+
+### 1. 小窗口/异常窗口修复
+
+部分机器在更新后会残留希沃小窗口，例如 `540x246` 或类似尺寸。旧版本可能误选这个窗口，导致后续坐标全部失准。
+
+当前版本会：
+
+```text
+枚举所有希沃候选窗口
+选择面积最大的正常窗口
+如果只有小窗口，则重新启动希沃主界面
+必要时尝试把小窗口恢复到配置尺寸
 ```
 
 相关配置：
 
 ```ini
-WindowReadyDelayMs=2500
-NavClickCount=3
-NavClickIntervalMs=600
-PageDelayMs=2000
-CheckGreenButton=0
+[Freeze]
+LaunchWhenWindowTooSmall=1
+
+[Timing]
+WindowPollMs=500
+WindowRepairDelayMs=1500
+
+[Validation]
+MinWindowWidth=500
+MinWindowHeight=350
+RepairSmallWindow=1
+RepairWindowX=100
+RepairWindowY=60
+RepairWindowWidth=984
+RepairWindowHeight=683
+MaximizeRepairedWindow=0
 ```
 
-如果某台机器偶尔点错页面，可以优先增加：
+### 2. 触摸键盘抑制
+
+触摸屏 Windows 设备在点击密码框时，可能会自动弹出触摸键盘并挡住界面。
+
+当前版本会在自动化开始时临时关闭桌面触摸键盘自动唤起，并结束时恢复原状态：
 
 ```ini
-WindowReadyDelayMs=3500
-PageDelayMs=2500
+[Keyboard]
+SuppressTouchKeyboard=1
+DisableDesktopAutoInvoke=1
+RestoreDesktopAutoInvoke=1
+KillTouchKeyboardProcesses=1
+```
+
+如果某台机器仍然频繁弹出触摸键盘，维护人员可以临时设置：
+
+```ini
+RestoreDesktopAutoInvoke=0
+```
+
+这样运行后会保持 Windows 触摸键盘桌面自动唤起为关闭状态。
+
+### 3. 密码输入策略
+
+当前默认使用 AutoHotkey 文本输入方式，而不是单纯依赖剪贴板粘贴：
+
+```ini
+[Keyboard]
+PasswordInputMethod=Text
+AfterPasswordInputClickDelayMs=500
+RefocusPasswordInputAfterKeyboardClose=1
+AfterPasswordInputRefocusDelayMs=150
+AfterPasswordInputDelayMs=250
+```
+
+如果某台机器文本输入不稳定，可以把输入方式临时改成剪贴板：
+
+```ini
+PasswordInputMethod=Clipboard
 ```
 
 ## 七、日志位置
 
-冰点自动化日志：
+GUI 自动化日志：
 
 ```text
 logs/freeze/
 ```
 
-下载更新日志：
+更新日志：
 
 ```text
 logs/update/
 ```
 
-如果操作失败，请查看对应目录中最新的日志文件。
-
-## 八、维护人员说明
-
-正式包中不需要包含以下开发资料：
+排查问题时，优先看最新的：
 
 ```text
-src/
-build/
-tools/
-pics/
-probe.bat
-README_DEPLOY.md
-logs/probe/
-.agents/
-.git/
+logs/freeze/lock_*.log
+logs/freeze/unlock_*.log
+logs/update/update_*.log
 ```
 
-如果以后需要修改 AutoHotkey 源码或重新编译，请在开发备份中保留：
+## 八、开发与编译
+
+开发源码在：
 
 ```text
 src/
-build/
 ```
 
 重新编译需要在开发电脑安装 AutoHotkey v1.1，然后运行：
@@ -273,11 +298,20 @@ build/
 build\compile.bat
 ```
 
-编译完成后会生成新的：
+编译后会生成：
 
 ```text
 unlock.exe
 lock.exe
 ```
 
-老师电脑不需要安装 AutoHotkey。
+编译完成后，把新的 `unlock.exe`、`lock.exe` 和新版 `config/app.ini` 同步到交付目录。
+
+## 九、维护建议
+
+正式运行前确认：
+
+- `config/app.ini` 中密码和目标磁盘正确。
+- 不要在自动化过程中移动鼠标、敲键盘或遮挡希沃窗口。
+- 冰点相关操作完成后可能立即重启，运行前保存好所有文件。
+- 如果偶发出现密码错误，先保留 `logs/freeze` 中对应日志，再排查输入方式和页面状态。
