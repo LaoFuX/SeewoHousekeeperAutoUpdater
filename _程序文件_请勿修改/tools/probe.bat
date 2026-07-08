@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-cd /d "%~dp0"
+cd /d "%~dp0.."
 
 if not exist "tools\probe_env.ps1" (
     echo ERROR: tools\probe_env.ps1 was not found.
@@ -22,7 +22,7 @@ echo This script is read-only.
 echo It collects Windows, app, window, and UI Automation data.
 echo.
 
-powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0tools\probe_env.ps1"
+powershell -NoProfile -ExecutionPolicy Bypass -File "%CD%\tools\probe_env.ps1"
 set "EXIT_CODE=%ERRORLEVEL%"
 
 echo.

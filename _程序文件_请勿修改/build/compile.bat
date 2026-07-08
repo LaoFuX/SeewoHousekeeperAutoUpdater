@@ -19,14 +19,16 @@ echo Using compiler:
 echo %AHK2EXE%
 echo.
 
-"%AHK2EXE%" /in "%CD%\src\unlock.ahk" /out "%CD%\unlock.exe"
+if not exist "%CD%\bin" mkdir "%CD%\bin"
+
+"%AHK2EXE%" /in "%CD%\src\unlock.ahk" /out "%CD%\bin\unlock.exe"
 if errorlevel 1 exit /b %errorlevel%
 
-"%AHK2EXE%" /in "%CD%\src\lock.ahk" /out "%CD%\lock.exe"
+"%AHK2EXE%" /in "%CD%\src\lock.ahk" /out "%CD%\bin\lock.exe"
 if errorlevel 1 exit /b %errorlevel%
 
 echo.
 echo Build complete:
-echo   unlock.exe
-echo   lock.exe
+echo   bin\unlock.exe
+echo   bin\lock.exe
 exit /b 0

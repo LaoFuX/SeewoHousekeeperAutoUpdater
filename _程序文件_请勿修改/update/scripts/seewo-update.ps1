@@ -5,9 +5,17 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$ScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$RepoRoot   = Split-Path -Parent $ScriptRoot
-$ConfigPath = Join-Path $RepoRoot 'config\app.ini'
+$ScriptRoot  = Split-Path -Parent $MyInvocation.MyCommand.Path
+$UpdateRoot  = Split-Path -Parent $ScriptRoot
+$PackageRoot = Split-Path -Parent $UpdateRoot
+$ConfigPath  = Join-Path $PackageRoot 'config\app.ini'
+
+function Resolve-PackagePath {
+    param([string]$Path)
+    if ([string]::IsNullOrWhiteSpace($Path)) { return $Path }
+    if ([System.IO.Path]::IsPathRooted($Path)) { return $Path }
+    return Join-Path $PackageRoot $Path
+}
 
 $CFG = @{
     OfficialApiUrl = 'https://e.seewo.com/download/file?code=SeewoServiceSetup'
@@ -20,7 +28,7 @@ $CFG = @{
         "$env:ProgramFiles\Seewo\SeewoHousekeeper"
     )
     TempDir        = 'C:\Temp\SeewoUpdate'
-    LogDir         = (Join-Path $RepoRoot 'logs\update')
+    LogDir         = (Join-Path $PackageRoot 'logs\update')
     Timeout        = 45
     Cleanup        = $true
 }
@@ -75,6 +83,8 @@ if (Test-Path -LiteralPath $ConfigPath) {
     $CFG.Cleanup        = Convert-ToBool (Get-IniValue $ini 'Update' 'CleanupInstaller' $CFG.Cleanup) $CFG.Cleanup
     $CFG.LogDir         = Get-IniValue $ini 'Log' 'UpdateLogDir' $CFG.LogDir
 }
+
+$CFG.LogDir = Resolve-PackagePath $CFG.LogDir
 
 if (-not $CFG.VpsDownloadUrl) {
     $CFG.VpsDownloadUrl = [System.Text.Encoding]::UTF8.GetString(

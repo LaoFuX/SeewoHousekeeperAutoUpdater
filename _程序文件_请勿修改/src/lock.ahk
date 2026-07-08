@@ -15,7 +15,11 @@ CoordMode, Pixel, Screen
 #Include %A_ScriptDir%\lib\FreezeAutomation.ahk
 
 if (A_IsCompiled) {
-    repoRoot := A_ScriptDir
+    if (FileExist(A_ScriptDir . "\..\config\app.ini")) {
+        repoRoot := A_ScriptDir . "\.."
+    } else {
+        repoRoot := A_ScriptDir
+    }
 } else {
     repoRoot := A_ScriptDir . "\.."
 }
