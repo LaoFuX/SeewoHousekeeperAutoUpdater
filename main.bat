@@ -1,97 +1,79 @@
 @echo off
 setlocal EnableExtensions
+chcp 65001 >nul 2>&1
 cd /d "%~dp0"
 
 call :ensure_admin
 if errorlevel 1 exit /b %errorlevel%
 
-:menu
-cls
 echo.
-echo ==========================
-echo   Seewo Housekeeper Tool
-echo ==========================
+echo ========================================
+echo  Update Seewo, then lock and reboot
+echo ========================================
 echo.
-echo 1. Unlock / unfreeze - reboot immediately
+echo This workflow will:
+echo   1. Run the official update module
+echo   2. Lock / freeze the selected disk
+echo   3. Reboot the computer immediately
 echo.
-echo 2. Official update
+echo If the update fails, locking will NOT start.
 echo.
-echo 3. VPS update
-echo.
-echo 4. Lock / freeze - reboot immediately
-echo.
-echo 0. Exit
-echo.
-echo ==========================
-echo.
-set /p "CHOICE=Select option: "
 
-if "%CHOICE%"=="1" call :run_automation "unlock.exe" "src\unlock.ahk" "Unlock / unfreeze"
-if "%CHOICE%"=="2" call :run_batch "download.bat" "Official update"
-if "%CHOICE%"=="3" call :run_batch "backup.bat" "VPS update"
-if "%CHOICE%"=="4" call :run_automation "lock.exe" "src\lock.ahk" "Lock / freeze"
-if "%CHOICE%"=="0" exit /b 0
-
-echo.
-echo Invalid option.
-pause
-goto :menu
-
-:run_batch
-set "MODULE=%~1"
-set "TITLE=%~2"
-echo.
-echo Running: %TITLE%
-echo.
-if not exist "%~dp0%MODULE%" (
-    echo ERROR: %MODULE% was not found.
+if not exist "%~dp0download.bat" (
+    echo ERROR: download.bat was not found.
     pause
-    goto :menu
+    exit /b 2
 )
-call "%~dp0%MODULE%"
-set "EXIT_CODE=%ERRORLEVEL%"
-echo.
-echo %TITLE% finished with exit code %EXIT_CODE%.
-if "%EXIT_CODE%"=="3010" echo Reboot is required to finish the update.
-pause
-goto :menu
 
-:run_automation
-set "EXE=%~1"
-set "AHK=%~2"
-set "TITLE=%~3"
+call "%~dp0download.bat"
+set "UPDATE_EXIT_CODE=%ERRORLEVEL%"
+
 echo.
-echo Running: %TITLE%
+echo Update module finished with exit code %UPDATE_EXIT_CODE%.
+
+if "%UPDATE_EXIT_CODE%"=="0" goto :run_lock
+if "%UPDATE_EXIT_CODE%"=="3010" goto :run_lock
+
+echo.
+echo ERROR: Update failed. Lock step was skipped.
+echo See logs\update for details.
+pause
+exit /b %UPDATE_EXIT_CODE%
+
+:run_lock
+echo.
+echo Starting lock / freeze automation.
 echo WARNING: This action may reboot the computer immediately.
 echo.
 
-if exist "%~dp0%EXE%" (
-    "%~dp0%EXE%"
-    set "EXIT_CODE=%ERRORLEVEL%"
-    goto :automation_done
+call :run_lock_automation
+set "LOCK_EXIT_CODE=%ERRORLEVEL%"
+
+echo.
+echo Lock automation finished with exit code %LOCK_EXIT_CODE%.
+if not "%LOCK_EXIT_CODE%"=="0" (
+    echo See logs\freeze for details.
+    pause
+)
+exit /b %LOCK_EXIT_CODE%
+
+:run_lock_automation
+if exist "%~dp0lock.exe" (
+    "%~dp0lock.exe"
+    exit /b %ERRORLEVEL%
 )
 
 where AutoHotkey.exe >nul 2>&1
 if "%ERRORLEVEL%"=="0" (
-    if exist "%~dp0%AHK%" (
-        AutoHotkey.exe "%~dp0%AHK%"
-        set "EXIT_CODE=%ERRORLEVEL%"
-        goto :automation_done
+    if exist "%~dp0src\lock.ahk" (
+        AutoHotkey.exe "%~dp0src\lock.ahk"
+        exit /b %ERRORLEVEL%
     )
 )
 
-echo ERROR: %EXE% was not found.
-echo Development fallback also failed: AutoHotkey.exe or %AHK% was not found.
-set "EXIT_CODE=2"
-
-:automation_done
-echo.
-echo %TITLE% finished with exit code %EXIT_CODE%.
-if not "%EXIT_CODE%"=="0" (
-    echo See logs\freeze for details.
-    pause
-)
-goto :menu
+echo ERROR: lock.exe was not found.
+echo Development fallback also failed: AutoHotkey.exe or src\lock.ahk was not found.
+exit /b 2
 
 :ensure_admin
 net session >nul 2>&1

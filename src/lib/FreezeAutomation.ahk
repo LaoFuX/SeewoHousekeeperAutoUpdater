@@ -71,9 +71,12 @@ SubmitPassword(winSpec, pwd) {
 
     x := Config_ReadFloat("Coords", "PasswordInputX", 0.50)
     y := Config_ReadFloat("Coords", "PasswordInputY", 0.49)
+    Keyboard_KillTouchKeyboardProcesses("before password input")
     ClickRatio(winSpec, "password input", x, y)
     PasteText(pwd)
     Logger_Log("INFO", "Password was pasted.")
+    Keyboard_KillTouchKeyboardProcesses("after password paste")
+    CloseTouchKeyboard("before password next")
 
     x := Config_ReadFloat("Coords", "PasswordNextX", 0.50)
     y := Config_ReadFloat("Coords", "PasswordNextY", 0.64)
@@ -123,6 +126,7 @@ ClickRestartNowIfNeeded(winSpec) {
 RunFreezeAutomation(action) {
     Logger_Log("INFO", "Automation action: " . action)
     pwd := GetAutomationPassword()
+    Keyboard_PrepareForAutomation()
     winSpec := EnsureSeewoWindow()
 
     OpenFreezePage(winSpec)
@@ -131,6 +135,7 @@ RunFreezeAutomation(action) {
     ClickConfiguredDrives(winSpec)
     ClickFreezeOrUnfreeze(winSpec, action)
     ConfirmOperation(winSpec)
+    Keyboard_RestoreAutomationState("before restart step")
     ClickRestartNowIfNeeded(winSpec)
 
     Logger_Log("OK", "Automation flow completed.")

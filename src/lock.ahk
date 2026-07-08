@@ -10,6 +10,7 @@ CoordMode, Pixel, Screen
 
 #Include %A_ScriptDir%\lib\Config.ahk
 #Include %A_ScriptDir%\lib\Logger.ahk
+#Include %A_ScriptDir%\lib\Keyboard.ahk
 #Include %A_ScriptDir%\lib\Window.ahk
 #Include %A_ScriptDir%\lib\FreezeAutomation.ahk
 
