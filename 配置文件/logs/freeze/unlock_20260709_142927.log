@@ -1,0 +1,38 @@
+﻿[2026-07-09 14:29:27][INFO] Log started: F:\AHKSCRIPT\internal\bin\..\logs\freeze\unlock_20260709_142927.log
+[2026-07-09 14:29:27][INFO] Automation action: UNLOCK
+[2026-07-09 14:29:27][INFO] Saved touch keyboard auto-invoke registry state. exists=1 value=1
+[2026-07-09 14:29:27][INFO] Disabled touch keyboard desktop auto-invoke for this automation run.
+[2026-07-09 14:29:27][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=3556 reason=automation start
+[2026-07-09 14:29:27][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=13812 reason=automation start
+[2026-07-09 14:29:27][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=1988 reason=automation start
+[2026-07-09 14:29:28][INFO] Waiting for window: ahk_class Chrome_WidgetWin_0 ahk_exe SeewoServiceAssistant.exe
+[2026-07-09 14:29:28][INFO] Window candidate count: 0
+[2026-07-09 14:29:28][INFO] Starting launcher: reason=target window not found path=C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher\SeewoHugoLauncher.exe args=/runmode=launcher
+[2026-07-09 14:29:29][INFO] Window candidate count: 1
+[2026-07-09 14:29:29][INFO] Candidate window hwnd=0x304a2 minmax=0 rect x=468 y=168 w=984 h=683 title=希沃管家
+[2026-07-09 14:29:29][INFO] Selected target window hwnd=0x304a2 rect x=468 y=168 w=984 h=683
+[2026-07-09 14:29:29][INFO] Window rect x=468 y=168 w=984 h=683
+[2026-07-09 14:29:29][INFO] Window ready delay: 2500 ms
+[2026-07-09 14:29:32][INFO] Click bottom freeze tab #1 at x=960 y=810 rx=0.500000 ry=0.940000
+[2026-07-09 14:29:33][INFO] Click bottom freeze tab #2 at x=960 y=810 rx=0.500000 ry=0.940000
+[2026-07-09 14:29:34][INFO] Click bottom freeze tab #3 at x=960 y=810 rx=0.500000 ry=0.940000
+[2026-07-09 14:29:36][INFO] Click main freeze action at x=684 y=510 rx=0.220000 ry=0.500000
+[2026-07-09 14:29:37][INFO] Click password tab at x=1049 y=400 rx=0.590000 ry=0.340000
+[2026-07-09 14:29:38][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=13948 reason=before password input
+[2026-07-09 14:29:38][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=3292 reason=before password input
+[2026-07-09 14:29:38][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=1612 reason=before password input
+[2026-07-09 14:29:39][INFO] Click password input at x=960 y=503 rx=0.500000 ry=0.490000
+[2026-07-09 14:29:40][INFO] Stopping touch keyboard process: TabTip.exe pid=12960 reason=after password input click
+[2026-07-09 14:29:40][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=1076 reason=after password input click
+[2026-07-09 14:29:40][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=9556 reason=after password input click
+[2026-07-09 14:29:40][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=11072 reason=after password input click
+[2026-07-09 14:29:41][INFO] Click password input refocus at x=960 y=503 rx=0.500000 ry=0.490000
+[2026-07-09 14:29:42][INFO] Password was entered by text input. length=13
+[2026-07-09 14:29:42][INFO] Click password next at x=960 y=605 rx=0.500000 ry=0.640000
+[2026-07-09 14:29:44][INFO] Target drives: C
+[2026-07-09 14:29:44][INFO] Click drive C at x=675 y=346 rx=0.210000 ry=0.260000
+[2026-07-09 14:29:45][INFO] Click unfreeze button at x=1058 y=680 rx=0.600000 ry=0.750000
+[2026-07-09 14:29:46][INFO] Click confirm ok at x=1068 y=612 rx=0.610000 ry=0.650000
+[2026-07-09 14:29:48][INFO] Restored touch keyboard desktop auto-invoke to value=1. reason=before restart step
+[2026-07-09 14:29:48][INFO] AutoRestart is disabled.
+[2026-07-09 14:29:48][OK] Automation flow completed.

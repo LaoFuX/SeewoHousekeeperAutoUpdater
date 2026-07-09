@@ -1,2 +1,7 @@
 希沃管家自动更新工具/
 *.zip
+
+# WinPE images are build/deploy artifacts and exceed GitHub's normal file limit.
+# Build them locally with 配置文件/winpe-builder/build-winpe.ps1.
+配置文件/winpe/boot.wim
+配置文件/winpe/boot.sdi

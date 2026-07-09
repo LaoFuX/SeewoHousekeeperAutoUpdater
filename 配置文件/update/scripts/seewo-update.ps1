@@ -5,10 +5,32 @@ param(
 
 $ErrorActionPreference = 'Stop'
 
-$ScriptRoot  = Split-Path -Parent $MyInvocation.MyCommand.Path
-$UpdateRoot  = Split-Path -Parent $ScriptRoot
-$PackageRoot = Split-Path -Parent $UpdateRoot
-$ConfigPath  = Join-Path $PackageRoot 'config\app.ini'
+$ScriptRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
+
+# The script runs from two different layouts:
+#   1. In-repo:   <PackageRoot>\update\scripts\seewo-update.ps1  (config two levels up)
+#   2. Deployed:  D:\SeewoHelper\seewo-update.ps1  (flattened, no config alongside)
+# Probe upward for a folder that actually contains config\app.ini; fall back to
+# the script's own directory when nothing is found (deployed/flattened case).
+$PackageRoot = $ScriptRoot
+$ConfigPath  = $null
+$probe = $ScriptRoot
+foreach ($i in 0..3) {
+    if ([string]::IsNullOrEmpty($probe)) { break }
+    $candidate = Join-Path $probe 'config\app.ini'
+    if (Test-Path -LiteralPath $candidate) {
+        $PackageRoot = $probe
+        $ConfigPath  = $candidate
+        break
+    }
+    $probe = Split-Path -Parent $probe
+}
+if (-not $ConfigPath) {
+    # No app.ini anywhere upward (flattened deploy): use built-in defaults,
+    # anchor relative paths to the script's own directory.
+    $ConfigPath  = Join-Path $ScriptRoot 'config\app.ini'  # non-existent, harmless
+    $PackageRoot = $ScriptRoot
+}
 
 function Resolve-PackagePath {
     param([string]$Path)
@@ -338,7 +360,14 @@ function Get-Installer {
 function Install-Seewo {
     param([string]$InstallerPath)
     Write-Log 'Running silent installer.' STEP
-    $proc = Start-Process -FilePath $InstallerPath -ArgumentList '/S' -Wait -PassThru -ErrorAction Stop
+    Write-Log 'This runs silently and can take several minutes. Please wait; do not close this window.' INFO
+    $sw = [System.Diagnostics.Stopwatch]::StartNew()
+    $proc = Start-Process -FilePath $InstallerPath -ArgumentList '/S' -PassThru -ErrorAction Stop
+    while (-not $proc.HasExited) {
+        Start-Sleep -Seconds 5
+        Write-Host ("[{0}][INFO] Installing... elapsed {1}s" -f (Get-Date -Format 'HH:mm:ss'), [int]$sw.Elapsed.TotalSeconds) -ForegroundColor Gray
+    }
+    $sw.Stop()
     switch ($proc.ExitCode) {
         0    { Write-Log 'Installation succeeded.' OK }
         3010 { Write-Log 'Installation succeeded; reboot is required.' WARN }

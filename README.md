@@ -1,236 +1,221 @@
-# 希沃管家自动更新工具 - 简洁交付版
+# 希沃管家自动更新脚本
 
-## 一、老师只需要点击这两个入口
-
-把整个文件夹交给老师后，根目录只需要关注两个 BAT：
+这是一个用于“解冻冰点/还原保护 → 更新希沃管家 → 重新冻结并重启”的一键自动化工具。当前交付形态很简单：
 
 ```text
-1_解锁冰点并重启.bat
-2_更新希沃管家并上锁重启.bat
+一键更新希沃.bat
+配置文件/
 ```
 
-推荐完整流程：
+老师或现场维护人员只需要双击 `一键更新希沃.bat`。`配置文件` 是程序、配置、WinPE 镜像、日志和源码目录，必须和入口 BAT 放在同一级，不要只复制入口文件。
+
+## 使用方式
+
+1. 把整个项目文件夹放到目标电脑上。
+2. 确认 `一键更新希沃.bat` 旁边存在 `配置文件` 文件夹。
+3. 双击 `一键更新希沃.bat`。
+4. 按系统弹窗授权管理员权限。
+5. 后续流程会自动重启多次，等待它完成。
+
+如果 Windows 需要手动登录，WinPE 阶段重启回 Windows 后需要登录一次；登录后 `RunOnce` 才会触发最后的更新和上锁流程。
+
+## 自动化流程
+
+整个流程分为三个阶段：
 
 ```text
-第一步：双击 1_解锁冰点并重启.bat
-  解锁/解冻冰点，然后电脑重启。
+Phase 1：Windows 内运行
+  一键更新希沃.bat
+    -> 配置文件\workflow\orchestrate.bat
+    -> 部署 D:\WinPE
+    -> 部署 D:\SeewoHelper
+    -> 运行 unlock.exe 解冻冰点
+    -> 创建一次性 WinPE 启动项
+    -> 重启
 
-第二步：电脑重启回来后，双击 2_更新希沃管家并上锁重启.bat
-  更新希沃管家，更新成功后上锁/冻结冰点，然后电脑重启。
+Phase 2：WinPE 内运行
+  startnet.cmd
+    -> 查找 Windows 分区
+    -> 查找 D:\SeewoHelper 标记
+    -> 离线加载 Windows SOFTWARE 注册表
+    -> 写入 RunOnce
+    -> 清理临时 BCD 启动项
+    -> 重启回 Windows
+
+Phase 3：Windows 登录后运行
+  D:\SeewoHelper\post-thaw-update.bat
+    -> 运行 seewo-update.ps1 更新希沃管家
+    -> 更新成功后运行 lock.exe 重新冻结
+    -> 删除临时部署的 config\app.ini
+    -> 重启
 ```
 
-`2_更新希沃管家并上锁重启.bat` 不会先解锁。它适用于电脑已经处于解冻/可写状态的维护场景。
+`seewo-update.ps1` 默认使用官方源，官方源不可用时自动切换到 VPS 备用源。只有更新脚本返回成功时，才会继续执行重新冻结；如果更新失败，会跳过上锁并保留窗口提示。
 
-## 二、目录结构
-
-当前交付结构：
+## 目录结构
 
 ```text
-希沃管家自动更新工具/
-│
-├─ 1_解锁冰点并重启.bat
-├─ 2_更新希沃管家并上锁重启.bat
-│
-└─ _程序文件_请勿修改/
+AHKSCRIPT/
+├─ 一键更新希沃.bat
+├─ README.md
+├─ README_DEPLOY.md
+└─ 配置文件/
    ├─ bin/
    │  ├─ unlock.exe
    │  └─ lock.exe
-   │
    ├─ config/
    │  └─ app.ini
-   │
    ├─ workflow/
-   │  ├─ unlock-and-restart.bat
-   │  └─ update-lock-restart.bat
-   │
+   │  ├─ orchestrate.bat
+   │  ├─ setup-winpe-boot.ps1
+   │  └─ post-thaw-update.bat
+   ├─ winpe/
+   │  ├─ boot.wim
+   │  └─ boot.sdi
+   ├─ winpe-builder/
+   │  ├─ build-winpe.ps1
+   │  └─ startnet.cmd
    ├─ update/
    │  ├─ download.bat
    │  ├─ backup.bat
    │  └─ scripts/
    │     └─ seewo-update.ps1
-   │
-   ├─ logs/
-   │  ├─ freeze/
-   │  └─ update/
-   │
    ├─ src/
    ├─ build/
    ├─ tools/
    ├─ pics/
+   ├─ logs/
    └─ docs/
 ```
 
-根目录两个 BAT 是老师入口。`_程序文件_请勿修改` 是内部程序目录，平时不要改名、移动或删除。
-
-## 三、内部模块说明
+关键文件说明：
 
 ```text
-bin/unlock.exe
-  解锁/解冻 GUI 自动化程序，由 AutoHotkey 源码编译生成。
+一键更新希沃.bat
+  根目录入口。自动请求管理员权限，并寻找旁边的程序目录。
 
-bin/lock.exe
-  上锁/冻结 GUI 自动化程序，由 AutoHotkey 源码编译生成。
+配置文件\workflow\orchestrate.bat
+  Phase 1 主编排脚本。部署 WinPE 和 SeewoHelper，运行解冻，创建一次性启动项。
 
-config/app.ini
-  配置文件。保存密码、目标磁盘、希沃启动路径、等待时间、窗口修复和触摸键盘处理策略。
+配置文件\workflow\setup-winpe-boot.ps1
+  创建 WinPE ramdisk BCD 对象和一次性 bootsequence，并把 GUID 写入 D:\SeewoHelper。
 
-workflow/unlock-and-restart.bat
-  内部解锁流程。根目录入口 1 会调用它。
+配置文件\winpe-builder\startnet.cmd
+  注入 boot.wim 的 WinPE 启动脚本，也就是 Phase 2。
 
-workflow/update-lock-restart.bat
-  内部更新并上锁流程。根目录入口 2 会调用它。
+配置文件\workflow\post-thaw-update.bat
+  Phase 3 脚本。由 Windows RunOnce 触发，负责更新、上锁和最终重启。
 
-update/download.bat
-  更新入口。优先使用官方源，官方源不可用时走 VPS 备用源。
+配置文件\bin\unlock.exe
+  AutoHotkey 编译产物，用于在希沃管家界面中解冻目标磁盘。
 
-update/backup.bat
-  VPS 备用更新入口，主要给维护人员手动排查时使用。
+配置文件\bin\lock.exe
+  AutoHotkey 编译产物，用于在希沃管家界面中重新冻结目标磁盘。
 
-update/scripts/seewo-update.ps1
-  下载、版本检测、静默安装的 PowerShell 核心逻辑。
-
-logs/freeze
-  解锁/上锁 GUI 自动化日志。
-
-logs/update
-  希沃管家更新日志。
+配置文件\update\scripts\seewo-update.ps1
+  希沃管家更新逻辑，包含版本检测、下载、静默安装和日志。
 ```
 
-老师电脑不需要安装 AutoHotkey，也不需要携带 AutoHotkey.exe。
+## 常用配置
 
-## 四、常用配置
-
-配置文件位置：
+配置文件在：
 
 ```text
-_程序文件_请勿修改/config/app.ini
+配置文件\config\app.ini
 ```
 
-### 1. 密码
+常用项：
 
 ```ini
 [Freeze]
+LauncherPath=C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher\SeewoHugoLauncher.exe
+LauncherArgs=/runmode=launcher
 Password=
-```
-
-如果 `Password=` 留空，运行时会弹出密码输入框。
-
-如果要全自动运行，可以填写冰点密码：
-
-```ini
-Password=123456
-```
-
-注意：密码会明文保存在配置文件里，交付包不要发给无关人员。
-
-### 2. 目标磁盘
-
-只处理 C 盘：
-
-```ini
 Drives=C
-```
-
-同时处理 C 盘和 E 盘：
-
-```ini
-Drives=C,E
-```
-
-### 3. 自动重启
-
-正式使用建议保持：
-
-```ini
-AutoRestart=1
-```
-
-调试时如果不想让程序最后自动点击重启，可以临时改成：
-
-```ini
 AutoRestart=0
 ```
 
-## 五、稳定性处理
+`Password` 留空时，`unlock.exe` 或 `lock.exe` 会弹出密码输入框。需要全自动时，可以把冰点密码写到这里；注意它是明文保存，交付包不要发给无关人员。Phase 3 会删除临时复制到 `D:\SeewoHelper\config\app.ini` 的那一份，但源目录里的 `配置文件\config\app.ini` 仍会保留。
 
-### 1. 小窗口/异常窗口修复
-
-部分机器在更新后会残留希沃小窗口。当前版本会枚举候选窗口，优先选择面积最大的正常窗口；如果只有小窗口，会重新启动希沃主界面，必要时尝试恢复窗口尺寸。
-
-相关配置：
+`Drives` 表示要解冻/冻结的盘符，例如：
 
 ```ini
-[Freeze]
-LaunchWhenWindowTooSmall=1
-
-[Validation]
-RepairSmallWindow=1
-RepairWindowWidth=984
-RepairWindowHeight=683
+Drives=C
+Drives=C,E
 ```
 
-### 2. 触摸键盘抑制
+`AutoRestart` 只控制 AHK 在希沃管家确认界面里是否点击“立即重启”。一键总流程后续的系统重启由 BAT、WinPE 和 Phase 3 脚本控制。
 
-触摸屏 Windows 设备点击密码框时可能弹出触摸键盘。当前版本会临时关闭桌面触摸键盘自动唤起，并在结束前恢复。
-
-相关配置：
+更新源相关配置：
 
 ```ini
-[Keyboard]
-SuppressTouchKeyboard=1
-DisableDesktopAutoInvoke=1
-RestoreDesktopAutoInvoke=1
-KillTouchKeyboardProcesses=1
+[Update]
+OfficialApiUrl=https://e.seewo.com/download/file?code=SeewoServiceSetup
+VpsUrlB64=...
+TempDir=C:\Temp\SeewoUpdate
+TimeoutSeconds=45
+CleanupInstaller=1
 ```
 
-### 3. 密码输入策略
-
-当前默认使用 AutoHotkey 文本输入方式：
-
-```ini
-[Keyboard]
-PasswordInputMethod=Text
-```
-
-如果某台机器文本输入不稳定，可以临时改为剪贴板输入：
-
-```ini
-PasswordInputMethod=Clipboard
-```
-
-## 六、开发与编译
-
-源码位于：
+## 日志位置
 
 ```text
-_程序文件_请勿修改/src/
+配置文件\logs\freeze\
+  Phase 1 中 unlock.exe 的日志，以及手动运行 lock/unlock 时的日志。
+
+D:\SeewoHelper\logs\phase3_*.log
+  Phase 3 主流程日志。
+
+D:\SeewoHelper\logs\freeze\lock_*.log
+  Phase 3 中 lock.exe 重新冻结时的日志。
+
+D:\SeewoHelper\logs\update\update_*.log
+  Phase 3 中希沃管家更新日志。
+
+配置文件\logs\update\
+  在项目目录内手动运行 update\download.bat 或 backup.bat 时的更新日志。
+
+X:\seewo_phase2.log
+  WinPE 内 Phase 2 临时日志，重启后会消失。
+
+配置文件\logs\probe\
+  tools\probe.bat 生成的环境探测日志。
 ```
 
-重新编译需要在开发电脑安装 AutoHotkey v1.1，然后运行：
+## 重新构建
+
+重新编译 `unlock.exe` 和 `lock.exe`：
 
 ```bat
-_程序文件_请勿修改/build/compile.bat
+配置文件\build\compile.bat
 ```
 
-编译完成后会直接生成：
+开发机需要安装 AutoHotkey v1.1。
 
-```text
-_程序文件_请勿修改/bin/unlock.exe
-_程序文件_请勿修改/bin/lock.exe
+重新构建 WinPE 镜像：
+
+```powershell
+配置文件\winpe-builder\build-winpe.ps1
 ```
 
-## 七、排查问题
+开发机需要安装 Windows ADK 和 Windows PE 附加组件，并以管理员身份运行 PowerShell。默认输出到 `配置文件\winpe\boot.wim` 和 `配置文件\winpe\boot.sdi`。修改 `startnet.cmd` 后必须重新构建 `boot.wim` 才会生效。
 
-如果更新失败，看：
+## 排查建议
 
-```text
-_程序文件_请勿修改/logs/update/
-```
+如果入口提示找不到程序目录，检查 `一键更新希沃.bat` 和 `配置文件` 是否仍在同一级。
 
-如果解锁/上锁失败，看：
+如果提示缺少 `boot.wim` 或 `boot.sdi`，先重新运行 `配置文件\winpe-builder\build-winpe.ps1`。
 
-```text
-_程序文件_请勿修改/logs/freeze/
-```
+如果解冻或上锁失败，查看 `配置文件\logs\freeze\unlock_*.log`、`配置文件\logs\freeze\lock_*.log` 或 `D:\SeewoHelper\logs\freeze\lock_*.log`，并检查 `app.ini` 里的密码、目标盘符、希沃启动路径、窗口尺寸和坐标配置。
 
-如果偶发出现密码错误，先保留对应的 `lock_*.log` 或 `unlock_*.log`，再排查输入方式和页面状态。
+如果更新失败，查看 `D:\SeewoHelper\logs\update\update_*.log`。更新失败时会跳过上锁，避免在未更新完成的状态下重新冻结。
+
+如果重启后没有进入 WinPE，重点检查 BCD 创建阶段输出、`D:\WinPE`、`D:\SeewoHelper\_winpe_guid.txt` 和 `D:\SeewoHelper\_ramdisk_guid.txt`。
+
+如果进入 WinPE 后没有触发 Phase 3，确认 Windows 是否已经登录；`RunOnce` 需要在登录后运行。
+
+## 维护注意
+
+运行时 `.bat`、`.cmd` 和 `.ps1` 文件需要保持 Windows CRLF 行尾。仓库里的 `.gitattributes` 已经锁定这些文件类型，避免 CMD 解析异常。
+
+`配置文件\winpe\boot.wim`、`boot.sdi`、`bin\*.exe` 和 `pics\*.png` 是二进制文件，不要做文本转换。

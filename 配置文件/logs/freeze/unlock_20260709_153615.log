@@ -1,0 +1,40 @@
+﻿[2026-07-09 15:36:15][INFO] Log started: F:\AHKSCRIPT\internal\bin\..\logs\freeze\unlock_20260709_153615.log
+[2026-07-09 15:36:15][INFO] Automation action: UNLOCK
+[2026-07-09 15:36:15][INFO] Saved touch keyboard auto-invoke registry state. exists=1 value=1
+[2026-07-09 15:36:15][INFO] Disabled touch keyboard desktop auto-invoke for this automation run.
+[2026-07-09 15:36:15][INFO] Stopping touch keyboard process: TabTip.exe pid=11684 reason=automation start
+[2026-07-09 15:36:16][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=4344 reason=automation start
+[2026-07-09 15:36:16][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=3876 reason=automation start
+[2026-07-09 15:36:16][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=13636 reason=automation start
+[2026-07-09 15:36:16][INFO] Waiting for window: ahk_class Chrome_WidgetWin_0 ahk_exe SeewoServiceAssistant.exe
+[2026-07-09 15:36:16][INFO] Window candidate count: 0
+[2026-07-09 15:36:16][INFO] Starting launcher: reason=target window not found path=C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher\SeewoHugoLauncher.exe args=/runmode=launcher
+[2026-07-09 15:36:18][INFO] Window candidate count: 1
+[2026-07-09 15:36:18][INFO] Candidate window hwnd=0x30348 minmax=0 rect x=468 y=168 w=984 h=683 title=希沃管家
+[2026-07-09 15:36:18][INFO] Selected target window hwnd=0x30348 rect x=468 y=168 w=984 h=683
+[2026-07-09 15:36:18][INFO] Window rect x=468 y=168 w=984 h=683
+[2026-07-09 15:36:18][INFO] Window ready delay: 2500 ms
+[2026-07-09 15:36:21][INFO] Click bottom freeze tab #1 at x=960 y=810 rx=0.500000 ry=0.940000
+[2026-07-09 15:36:21][INFO] Click bottom freeze tab #2 at x=960 y=810 rx=0.500000 ry=0.940000
+[2026-07-09 15:36:22][INFO] Click bottom freeze tab #3 at x=960 y=810 rx=0.500000 ry=0.940000
+[2026-07-09 15:36:25][INFO] Click main freeze action at x=684 y=510 rx=0.220000 ry=0.500000
+[2026-07-09 15:36:26][INFO] Click password tab at x=1049 y=400 rx=0.590000 ry=0.340000
+[2026-07-09 15:36:27][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=13748 reason=before password input
+[2026-07-09 15:36:27][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=12148 reason=before password input
+[2026-07-09 15:36:27][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=13720 reason=before password input
+[2026-07-09 15:36:27][INFO] Click password input at x=960 y=503 rx=0.500000 ry=0.490000
+[2026-07-09 15:36:28][INFO] Stopping touch keyboard process: TabTip.exe pid=4764 reason=after password input click
+[2026-07-09 15:36:29][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=11860 reason=after password input click
+[2026-07-09 15:36:29][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=4360 reason=after password input click
+[2026-07-09 15:36:29][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=13928 reason=after password input click
+[2026-07-09 15:36:30][INFO] Click password input refocus at x=960 y=503 rx=0.500000 ry=0.490000
+[2026-07-09 15:36:30][INFO] Password was entered by text input. length=13
+[2026-07-09 15:36:31][INFO] Stopping touch keyboard process: TabTip.exe pid=11948 reason=before password next
+[2026-07-09 15:36:32][INFO] Click password next at x=960 y=605 rx=0.500000 ry=0.640000
+[2026-07-09 15:36:34][INFO] Target drives: C
+[2026-07-09 15:36:34][INFO] Click drive C at x=675 y=346 rx=0.210000 ry=0.260000
+[2026-07-09 15:36:34][INFO] Click unfreeze button at x=1058 y=680 rx=0.600000 ry=0.750000
+[2026-07-09 15:36:35][INFO] Click confirm ok at x=1068 y=612 rx=0.610000 ry=0.650000
+[2026-07-09 15:36:37][INFO] Restored touch keyboard desktop auto-invoke to value=1. reason=before restart step
+[2026-07-09 15:36:37][INFO] AutoRestart is disabled.
+[2026-07-09 15:36:37][OK] Automation flow completed.

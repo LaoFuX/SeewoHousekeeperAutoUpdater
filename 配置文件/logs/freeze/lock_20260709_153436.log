@@ -1,0 +1,39 @@
+﻿[2026-07-09 15:34:36][INFO] Log started: F:\AHKSCRIPT\internal\bin\..\logs\freeze\lock_20260709_153436.log
+[2026-07-09 15:34:36][INFO] Automation action: LOCK
+[2026-07-09 15:34:36][INFO] Saved touch keyboard auto-invoke registry state. exists=1 value=1
+[2026-07-09 15:34:36][INFO] Disabled touch keyboard desktop auto-invoke for this automation run.
+[2026-07-09 15:34:36][INFO] Stopping touch keyboard process: TabTip.exe pid=9028 reason=automation start
+[2026-07-09 15:34:36][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=10212 reason=automation start
+[2026-07-09 15:34:37][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=2020 reason=automation start
+[2026-07-09 15:34:37][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=1472 reason=automation start
+[2026-07-09 15:34:37][INFO] Waiting for window: ahk_class Chrome_WidgetWin_0 ahk_exe SeewoServiceAssistant.exe
+[2026-07-09 15:34:37][INFO] Window candidate count: 0
+[2026-07-09 15:34:37][INFO] Starting launcher: reason=target window not found path=C:\Program Files (x86)\Seewo\SeewoService\SeewoHugoLauncher\SeewoHugoLauncher.exe args=/runmode=launcher
+[2026-07-09 15:34:39][INFO] Window candidate count: 1
+[2026-07-09 15:34:39][INFO] Candidate window hwnd=0x403d4 minmax=0 rect x=468 y=168 w=984 h=683 title=希沃管家
+[2026-07-09 15:34:39][INFO] Selected target window hwnd=0x403d4 rect x=468 y=168 w=984 h=683
+[2026-07-09 15:34:39][INFO] Window rect x=468 y=168 w=984 h=683
+[2026-07-09 15:34:39][INFO] Window ready delay: 2500 ms
+[2026-07-09 15:34:41][INFO] Click bottom freeze tab #1 at x=960 y=810 rx=0.500000 ry=0.940000
+[2026-07-09 15:34:42][INFO] Click bottom freeze tab #2 at x=960 y=810 rx=0.500000 ry=0.940000
+[2026-07-09 15:34:43][INFO] Click bottom freeze tab #3 at x=960 y=810 rx=0.500000 ry=0.940000
+[2026-07-09 15:34:46][INFO] Click main freeze action at x=684 y=510 rx=0.220000 ry=0.500000
+[2026-07-09 15:34:47][INFO] Click password tab at x=1049 y=400 rx=0.590000 ry=0.340000
+[2026-07-09 15:34:47][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=11676 reason=before password input
+[2026-07-09 15:34:48][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=14280 reason=before password input
+[2026-07-09 15:34:48][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=5004 reason=before password input
+[2026-07-09 15:34:48][INFO] Click password input at x=960 y=503 rx=0.500000 ry=0.490000
+[2026-07-09 15:34:49][INFO] Stopping touch keyboard process: TabTip.exe pid=12272 reason=after password input click
+[2026-07-09 15:34:49][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=12172 reason=after password input click
+[2026-07-09 15:34:50][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=1128 reason=after password input click
+[2026-07-09 15:34:50][INFO] Stopping touch keyboard process: WindowsInternal.ComposableShell.Experiences.TextInput.InputApp.exe pid=14252 reason=after password input click
+[2026-07-09 15:34:51][INFO] Click password input refocus at x=960 y=503 rx=0.500000 ry=0.490000
+[2026-07-09 15:34:51][INFO] Password was entered by text input. length=13
+[2026-07-09 15:34:52][INFO] Click password next at x=960 y=605 rx=0.500000 ry=0.640000
+[2026-07-09 15:34:54][INFO] Target drives: C
+[2026-07-09 15:34:54][INFO] Click drive C at x=675 y=346 rx=0.210000 ry=0.260000
+[2026-07-09 15:34:54][INFO] Click freeze button at x=862 y=680 rx=0.400000 ry=0.750000
+[2026-07-09 15:34:55][INFO] Click confirm ok at x=1068 y=612 rx=0.610000 ry=0.650000
+[2026-07-09 15:34:57][INFO] Restored touch keyboard desktop auto-invoke to value=1. reason=before restart step
+[2026-07-09 15:34:57][INFO] AutoRestart is disabled.
+[2026-07-09 15:34:57][OK] Automation flow completed.

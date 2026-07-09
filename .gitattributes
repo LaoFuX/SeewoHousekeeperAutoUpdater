@@ -1,0 +1,14 @@
+# Windows batch/cmd scripts MUST use CRLF line endings.
+# CMD.exe mis-parses LF-only .bat files (splits words like "Requesting"
+# into stray tokens such as 'ing', causing flash-and-close on double-click).
+*.bat  text eol=crlf
+*.cmd  text eol=crlf
+
+# PowerShell scripts also prefer CRLF on Windows.
+*.ps1  text eol=crlf
+
+# WinPE images are binary and must never be line-ending converted.
+*.wim  binary
+*.sdi  binary
+*.exe  binary
+*.png  binary
