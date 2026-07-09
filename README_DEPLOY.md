@@ -9,6 +9,8 @@
 
 `一键更新希沃.bat` 是唯一入口。`配置文件` 里包含实际程序、配置、WinPE 镜像、更新脚本、源码和日志目录。交付时必须保留整个文件夹结构，不要只复制入口 BAT。
 
+注意：`配置文件\winpe\boot.wim` 和 `boot.sdi` 是本地构建产物，不提交到 GitHub。`boot.wim` 体积超过 GitHub 普通仓库的单文件限制；从 GitHub clone 后，需要重新构建 WinPE，或从已构建好的交付包中手动复制这两个文件。
+
 ## 部署前检查
 
 目标电脑需要满足：
@@ -17,7 +19,7 @@
 1. Windows 系统可正常启动并能使用管理员权限。
 2. 希沃管家已经安装，且 config\app.ini 中的 LauncherPath 指向正确。
 3. D: 盘可写；流程会创建或使用 D:\WinPE 和 D:\SeewoHelper。
-4. 配置文件\winpe\boot.wim 和 boot.sdi 已存在。
+4. 配置文件\winpe\boot.wim 和 boot.sdi 已存在；如果是从 GitHub clone 的源码，需要先构建或手动补齐。
 5. 冰点/还原保护密码已知；如需全自动，应写入配置文件。
 ```
 
@@ -165,6 +167,8 @@ Windows PE 附加组件
 配置文件\winpe\boot.wim
 配置文件\winpe\boot.sdi
 ```
+
+如果已经有一份可用的交付包，也可以直接把其中的 `配置文件\winpe\boot.wim` 和 `配置文件\winpe\boot.sdi` 复制到当前项目；这两个文件会被 `.gitignore` 忽略，不会再进入 GitHub 提交。
 
 ## 重新编译 AHK 程序
 

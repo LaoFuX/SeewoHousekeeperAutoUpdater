@@ -9,6 +9,8 @@
 
 老师或现场维护人员只需要双击 `一键更新希沃.bat`。`配置文件` 是程序、配置、WinPE 镜像、日志和源码目录，必须和入口 BAT 放在同一级，不要只复制入口文件。
 
+注意：`配置文件\winpe\boot.wim` 和 `boot.sdi` 体积较大，其中 `boot.wim` 超过 GitHub 普通仓库的单文件限制，所以这两个文件不会提交到 GitHub。clone 仓库后需要在本机重新构建，或从已构建好的交付包中手动放回 `配置文件\winpe\`。
+
 ## 使用方式
 
 1. 把整个项目文件夹放到目标电脑上。
@@ -182,6 +184,8 @@ X:\seewo_phase2.log
   tools\probe.bat 生成的环境探测日志。
 ```
 
+`配置文件\winpe\boot.wim` 和 `boot.sdi` 是本地构建产物，不随 GitHub 仓库提交；如果是从 GitHub clone 的源码目录，这两个文件需要重新构建或手动补齐。
+
 ## 重新构建
 
 重新编译 `unlock.exe` 和 `lock.exe`：
@@ -200,11 +204,13 @@ X:\seewo_phase2.log
 
 开发机需要安装 Windows ADK 和 Windows PE 附加组件，并以管理员身份运行 PowerShell。默认输出到 `配置文件\winpe\boot.wim` 和 `配置文件\winpe\boot.sdi`。修改 `startnet.cmd` 后必须重新构建 `boot.wim` 才会生效。
 
+如果只是从另一台已经构建好的机器迁移，也可以直接把那台机器上的 `配置文件\winpe\boot.wim` 和 `配置文件\winpe\boot.sdi` 复制到当前目录；它们被 `.gitignore` 忽略，不会再被提交到 GitHub。
+
 ## 排查建议
 
 如果入口提示找不到程序目录，检查 `一键更新希沃.bat` 和 `配置文件` 是否仍在同一级。
 
-如果提示缺少 `boot.wim` 或 `boot.sdi`，先重新运行 `配置文件\winpe-builder\build-winpe.ps1`。
+如果提示缺少 `boot.wim` 或 `boot.sdi`，说明当前目录没有本地 WinPE 构建产物；重新运行 `配置文件\winpe-builder\build-winpe.ps1`，或从交付包中复制 `配置文件\winpe\boot.wim` 和 `boot.sdi` 回来。
 
 如果解冻或上锁失败，查看 `配置文件\logs\freeze\unlock_*.log`、`配置文件\logs\freeze\lock_*.log` 或 `D:\SeewoHelper\logs\freeze\lock_*.log`，并检查 `app.ini` 里的密码、目标盘符、希沃启动路径、窗口尺寸和坐标配置。
 
